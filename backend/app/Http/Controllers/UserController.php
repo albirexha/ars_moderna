@@ -142,11 +142,6 @@ class UserController extends Controller
         return response()->json('User is not updated');
     }
 
-    public function authUser(Request $request)
-    {
-        $user = $request->user();
-        return $user;
-    }
 
 
 
@@ -161,40 +156,17 @@ class UserController extends Controller
         //
     }
 
-    public function doLogin(Request $request)
-    {
 
 
-        if (!auth()->attempt($request->only('email', 'password'))) {
-            return \response([
-                'error' => 'Invalid Credentials!'
-            ], 401);
+    public function user_posts(Request $request){
+        $user = User::findOrFail($request->input('user_id'));
+        $posts = $user->post()->get();
+
+        if($posts) {
+            foreach ($posts as $post) {
+                echo $post->title;
+            }
         }
 
-        $user = Auth::user();
-
-        $user = User::where('email', $request->email)->first();
-        $token = $user->createToken('token')->plainTextToken;
-
-        $cookie = cookie('jwt', $token, 60*3);
-
-        return \response([
-            'access_token' => $token
-        ]);
-    }
-
-    public function login(){
-        return view('login');
-    }
-
-    public function user_posts(){
-//        $user = User::findOrFail($id);
-//        $posts = $user->post()->get();
-//
-//        foreach ($posts as $post){
-//            echo $post->title;
-//        }
-
-        return view('user_posts');
     }
 }

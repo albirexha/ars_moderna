@@ -16,8 +16,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
+
         if(Auth::user()) {
-            if (Auth::user()->role() == 1) {
+            if (Auth::user()->role == 1) {
                 return $next($request);
             }
         }
@@ -29,7 +30,5 @@ class IsAdmin
         return response()->json($response, 413);
 
 
-        //echo 'asd';
-        //return redirect('login');
     }
 }

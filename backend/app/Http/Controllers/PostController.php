@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 use Validator;
 
 class PostController extends Controller
@@ -17,6 +19,15 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::all();
+        if($posts){
+            $respose = [
+                'msg' => 'All posts',
+                'posts' => $posts
+            ];
+            return response()->json($respose, 201);
+        }
+        return response()->json('No posts!', 404);
     }
 
     /**
@@ -112,12 +123,36 @@ class PostController extends Controller
         //
     }
 
-    public function user_posts($id){
-        $user = User::findOrFail($id);
-        $posts = $user->post()->get();
+    public function my_posts(){
 
-        foreach ($posts as $post){
-            echo $post->title;
+        $user = Auth::user();
+
+        if($user){
+            $posts = $user->post()->get();
+
+            if(count($posts)>0){
+                $respose = [
+                    'msg' => 'My posts',
+                    'posts' => $posts
+                ];
+                return response()->json($respose, 201);
+            }
+            return response()->json('No posts!', 404);
         }
+    }
+
+    public function view_post($id){
+        $post=Post::with('user')->find($id);
+        if($post){
+            $respose = [
+                'msg' => 'Post',
+                'post' => $post
+            ];
+            return response()->json($respose, 201);
+
+        }
+
+        return response()->json('No post!', 404);
+
     }
 }

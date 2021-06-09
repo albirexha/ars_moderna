@@ -29,6 +29,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
+Route::group(['middleware' => ['admin','auth:sanctum']], function () {
+    Route::get('test',function (){
+        echo 'asd';
+    });
+    Route::post('user_posts',[\App\Http\Controllers\UserController::class,'user_posts']);
+
+});
 
 Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 
@@ -44,9 +51,11 @@ Route::resource('users',\App\Http\Controllers\UserController::class);
 Route::resource('artists',\App\Http\Controllers\ArtistController::class);
 Route::resource('posts',\App\Http\Controllers\PostController::class);
 
+Route::get('my_posts', [\App\Http\Controllers\PostController::class,'my_posts'])->middleware('auth:sanctum');
+Route::get('post/{id}', [\App\Http\Controllers\PostController::class,'view_post']);
 
 //Route::group(['middleware' => ['admin']], function () {
-//    Route::get('user_posts',[\App\Http\Controllers\UserController::class,'user_posts']);
+//    Route::get(,[\App\Http\Controllers\UserController::class,'user_posts']);
 //});
 
 //Route::delete('artists/delete/{id}',[\App\Http\Controllers\ArtistController::class,'destroy']);

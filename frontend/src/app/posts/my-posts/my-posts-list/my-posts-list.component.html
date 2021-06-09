@@ -1,0 +1,8 @@
+<div class="row">
+  <p *ngIf="error">{{error}}</p>
+<ul *ngIf="posts">
+  <li *ngFor="let post of posts; let i = index">
+    {{ i }} {{ post.title }}
+  </li>
+</ul>
+</div>
