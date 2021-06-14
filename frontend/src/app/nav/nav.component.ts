@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Auth} from "../classes/auth";
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,8 @@ import {HttpClient} from "@angular/common/http";
 export class NavComponent implements OnInit {
   authenticated = false;
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +26,9 @@ export class NavComponent implements OnInit {
   logout(): void{
     this.http.post('http://localhost/ars_moderna/backend/public/api/logout', {})
       .subscribe(()=>{
+        localStorage.removeItem('token');
+        this.router.navigate(['/']);
+
       });
   }
 }

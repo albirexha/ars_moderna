@@ -11,6 +11,8 @@ export class PostsListComponent implements OnInit {
 
   posts: any;
 
+  columnsToDisplay = ['title'];
+
   constructor(
     private postService: PostsService,
     private _router: Router
@@ -25,7 +27,6 @@ export class PostsListComponent implements OnInit {
     this.postService.getPosts()
       .toPromise().then((data:any)=>{
         this.posts = data.posts;
-
     });
   }
 

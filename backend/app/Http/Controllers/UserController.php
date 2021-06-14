@@ -17,7 +17,18 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+//        foreach ($users as $user) {
+//            $user->view_user = [
+//                'href' => 'v1/user/' . $user->id,
+//                'method' => 'GET'
+//            ];
+//        }
+        $response = [
+            'msg' => 'List of all users',
+            'users' => $users
+        ];
+        return response()->json($response, 201);
     }
 
     /**
@@ -157,7 +168,6 @@ class UserController extends Controller
     }
 
 
-
     public function user_posts(Request $request){
         $user = User::findOrFail($request->input('user_id'));
         $posts = $user->post()->get();
@@ -167,6 +177,5 @@ class UserController extends Controller
                 echo $post->title;
             }
         }
-
     }
 }

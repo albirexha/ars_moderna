@@ -25,7 +25,8 @@ export class SinglePostComponent implements OnInit {
   getPostById(id: any){
     this.postService.getPostById(id)
       .toPromise().then((data:any)=>{
-      this.postData = data.post.post;
+      this.postData = data.post;
+
       },(error) =>{
         this.router.navigate(['404']);
       }

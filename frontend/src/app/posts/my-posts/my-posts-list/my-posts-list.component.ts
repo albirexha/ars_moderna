@@ -10,7 +10,6 @@ export class MyPostsListComponent implements OnInit {
 
   posts: any;
   error: String = "";
-  noAuth: boolean = false;
   post: any;
 
   constructor(

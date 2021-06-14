@@ -69,6 +69,17 @@ class AuthController extends Controller
         return $request->user();
     }
 
+    public function isAdmin(Request $request){
+        if($user = $request->user()){
+            if($user->role==1)
+                $respose = [
+                    'msg' => 'Success Admin!'
+                ];
+            return response()->json($respose, 201);
+        }
+        return response()->json('User is not created', 404);
+    }
+
     public function logout(){
         $cookie = Cookie::forget('jwt');
 

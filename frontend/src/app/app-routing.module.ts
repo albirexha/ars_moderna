@@ -8,6 +8,10 @@ import {PostsListComponent} from "./posts/posts-list/posts-list.component";
 import {MyPostsListComponent} from "./posts/my-posts/my-posts-list/my-posts-list.component";
 import {SinglePostComponent} from "./posts/single-post/single-post.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {DashboardComponent} from "./admin/dashboard/dashboard.component";
+import {UsersListComponent} from "./admin/users/users-list/users-list.component";
+import {AuthGuard} from "./auth.guard";
+import {AdminGuard} from "./admin.guard";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +21,10 @@ const routes: Routes = [
   {path: 'my_posts', component: MyPostsListComponent},
   {path: 'single-post/:id' ,component: SinglePostComponent},
   { path: '404', component: NotFoundComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
+  { path: 'users', component: UsersListComponent },
+  { path: '**', component: NotFoundComponent },
+
 
 ];
 

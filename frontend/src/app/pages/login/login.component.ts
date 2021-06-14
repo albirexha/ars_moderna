@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -11,11 +12,13 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   form: FormGroup | any ;
+  token: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private http:HttpClient,
-    private router:Router
+    private router:Router,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +31,16 @@ export class LoginComponent implements OnInit {
 
   submit(): void{
     this.http.post('http://localhost/ars_moderna/backend/public/api/login', this.form?.getRawValue())
-      .subscribe(()=>this.router.navigate(['/']))
+      .subscribe((data: any)=> {
+        this.token = data;
+        localStorage.setItem('token', this.token.jwt);
+        this.authService.authUser().subscribe((next: any) => {
+          if (next.role == 1) {
+            this.router.navigate(['dashboard'])
+          } else {
+            this.router.navigate(['/'])
+          }
+        })
+      })
   }
-
 }

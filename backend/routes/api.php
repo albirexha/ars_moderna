@@ -25,7 +25,8 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::get('user', [AuthController::class, 'authUser']);
+    Route::get('authUser', [AuthController::class, 'authUser']);
+    Route::get('authUserRole/{id}','AuthController@authUserRole');
     Route::post('logout', [AuthController::class, 'logout']);
 });
 
@@ -53,6 +54,7 @@ Route::resource('posts',\App\Http\Controllers\PostController::class);
 
 Route::get('my_posts', [\App\Http\Controllers\PostController::class,'my_posts'])->middleware('auth:sanctum');
 Route::get('post/{id}', [\App\Http\Controllers\PostController::class,'view_post']);
+Route::get('isAdmin',['middleware' => ['admin','auth:sanctum']],'isAdmin');
 
 //Route::group(['middleware' => ['admin']], function () {
 //    Route::get(,[\App\Http\Controllers\UserController::class,'user_posts']);

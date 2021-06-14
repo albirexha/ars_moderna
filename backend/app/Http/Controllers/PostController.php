@@ -149,7 +149,6 @@ class PostController extends Controller
                 'post' => $post
             ];
             return response()->json($respose, 201);
-
         }
 
         return response()->json('No post!', 404);
