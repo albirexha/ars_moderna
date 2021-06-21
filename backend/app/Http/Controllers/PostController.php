@@ -48,7 +48,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validator = Validator::make($request->all(), [
             'user_id' => 'required',
             'title' => 'required',
@@ -58,11 +57,26 @@ class PostController extends Controller
             return response()->json(['error' => $validator->errors()], 401);
         }
 
+        $picture = "";
+
+        if ($request->hasFile('image'))
+        {
+            $file      = $request->file('image');
+            $filename  = $file->getClientOriginalName();
+            $extension =  $file->getClientOriginalExtension();
+            $picture   = date('His').'-'.$filename;
+            //move image to public/img folder
+            $path = $file->storeAs('public/imgs', $picture );
+
+            //$file->move(public_path('img'), $picture);
+            //return response()->json(["message" => "Image Uploaded Succesfully"]);
+        }
 
         $post = new Post();
 
         $post->title = $request->input('title');
         $user = User::findOrFail($request->input('user_id'));
+        $post->image = $picture;
 
         if ($user->post()->save($post)) {
             $post->view_post = [
@@ -71,11 +85,12 @@ class PostController extends Controller
             ];
             $respose = [
                 'msg' => 'Post created',
-                'artist' => $post
+                'post' => $post
             ];
             return response()->json([$respose], 201);
         }
         return response()->json('Post failed!', 404);
+
     }
 
     /**

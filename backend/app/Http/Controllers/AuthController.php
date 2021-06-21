@@ -73,7 +73,8 @@ class AuthController extends Controller
         if($user = $request->user()){
             if($user->role==1)
                 $respose = [
-                    'msg' => 'Success Admin!'
+                    'msg' => 'Success Admin!',
+                    'status' => '201'
                 ];
             return response()->json($respose, 201);
         }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
+import {LocalStorageService} from "ngx-webstorage";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private localStorageService: LocalStorageService
   ) { }
 
   userId: any = '';
@@ -33,7 +35,8 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.authService.logout().subscribe(
       () => {
-        // localStorage.removeItem('token');
+        localStorage.removeItem('token');
+        this.localStorageService.clear('role');
         // localStorage.removeItem('user_id');
         this.router.navigate(['/']);
       }

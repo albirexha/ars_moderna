@@ -4,6 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import { MatPaginator } from '@angular/material/paginator';
 import {AddUserComponent} from "../add-user/add-user.component";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {EditUserComponent} from "../edit-user/edit-user.component";
 
 @Component({
   selector: 'app-users-list',
@@ -21,7 +22,7 @@ export class UsersListComponent implements OnInit {
 
   dataSource: MatTableDataSource<any>;
 
-  columnsToDisplay: string[] = ['id','name','role','email','isArtist'];
+  columnsToDisplay: string[] = ['id','name','role','email','isArtist','Actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator ;
 
   ngOnInit(): void {
@@ -42,6 +43,17 @@ export class UsersListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
     this.dialog.open(AddUserComponent, dialogConfig).afterClosed().toPromise().then(result => {
+      this.getUsers();
+    });
+  }
+
+  onEdit(row: any) {
+    this.usersService.editForm.patchValue(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(EditUserComponent, dialogConfig).afterClosed().toPromise().then(result => {
       this.getUsers();
     });
   }

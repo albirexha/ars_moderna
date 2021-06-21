@@ -31,6 +31,11 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { AddPostComponent } from './admin/posts/add-post/add-post.component';
+import { AdminPostsListComponent } from './admin/posts/admin-posts-list/admin-posts-list.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
+import {AdminGuard} from "./admin.guard";
+import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,9 @@ import {MatGridListModule} from "@angular/material/grid-list";
     DashboardComponent,
     UsersListComponent,
     AddUserComponent,
+    AddPostComponent,
+    AdminPostsListComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,8 +75,11 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatDialogModule,
     MatCardModule,
     MatGridListModule,
+    NgxWebstorageModule.forRoot(),
+
   ],
   providers: [
+    AdminGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

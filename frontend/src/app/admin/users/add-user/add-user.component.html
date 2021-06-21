@@ -3,7 +3,7 @@
     <h2>Add New User</h2>
   </div>
 </div>
-<form [formGroup]="form" (submit)="onSubmit()">
+<form [formGroup]="form" (submit)="onSubmit()" enctype="multipart/form-data">
   <div class="row py-2">
 <!--    <input type="hidden" formControlName="id">-->
     <div class="col-sm-12 col-md-12">

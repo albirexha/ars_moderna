@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-12">
+    <h2>Edit User</h2>
+  </div>
+</div>
+<form [formGroup]="userService.editForm" (submit)="onSubmit()">
+  <div class="row py-2">
+    <input type="hidden" formControlName="id">
+    <div class="col-sm-12 col-md-12">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput #input formControlName="name" required>
+        <mat-error *ngIf="userService.editForm.controls['name'].errors?.required">Name is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 col-md-12">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput #input formControlName="email" required>
+        <mat-error *ngIf="userService.editForm.controls['email'].errors?.required">Email is required.</mat-error>
+        <mat-error *ngIf="userService.editForm.controls['email'].errors?.email">Please enter a valid email address.</mat-error>
+      </mat-form-field>
+<!--      <p style="font-size: 12px; color: red;margin-top: -15px;">{{emailMessage}}</p>-->
+    </div>
+    <div class="col-sm12 col-md-12">
+      <table style="margin-top: 5px;">
+        <thead>
+        <td>Role</td>
+        <td></td>
+        </thead>
+        <tbody>
+        <tr>
+          <td *ngFor="let entry of roles; let idx = index">
+            <input type="radio" required name="role" formControlName="role"
+                   [value]="entry.id">
+            <span style="padding: 0px 10px 0px 5px;">{{ entry.name}}</span>
+          </td>
+        </tr>
+        <mat-error *ngIf="userService.editForm.controls['role'].errors?.required">Role is required.</mat-error>
+        </tbody>
+      </table>
+    </div>
+
+<!--    <div class="col-sm12 col-md-12">-->
+<!--      <table style="margin-top: 5px;">-->
+<!--        <thead>-->
+<!--        <td>isArtist</td>-->
+<!--        <td></td>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr>-->
+<!--          <td *ngFor="let entry of artist; let idx = index">-->
+<!--            <input type="radio" required name="isArtist" formControlName="isArtist"-->
+<!--                   [value]="entry.id">-->
+<!--            <span style="padding: 0px 10px 0px 5px;">{{ entry.name}}</span>-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <mat-error *ngIf="userService.editForm.controls['role'].errors?.required">Role is required.</mat-error>-->
+<!--        </tbody>-->
+<!--      </table>-->
+<!--    </div>-->
+
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 text-right">
+      <button class="mb-2" mat-raised-button>
+        <mat-icon>edit</mat-icon>Edit User
+      </button>
+    </div>
+  </div>
+</form>
