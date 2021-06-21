@@ -1,14 +1,20 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService{
 
   readonly RootURL = environment.apiUrl + '/ars_moderna/backend/public/api';
   constructor(private http: HttpClient) { }
+
+  // ngOnInit(): void {
+  //   this.userRole();
+  // }
+  //
+  // role: any;
 
   authUser(){
     return this.http.get(this.RootURL + "/authUser");
@@ -23,13 +29,7 @@ export class AuthService {
   }
 
   isAdmin(){
-    this.http.get(this.RootURL + "/isAdmin").toPromise().then((data:any)=>{
-      return true;
-    }, (error)=>{
-        return false;
-    });
-    return false;
-
+    return this.http.get(this.RootURL + "/isAdmin");
   }
 
 }

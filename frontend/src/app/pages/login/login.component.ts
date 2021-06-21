@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthService} from "../../services/auth.service";
+import {LocalStorageService} from "ngx-webstorage";
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
     private http:HttpClient,
     private router:Router,
     private authService: AuthService,
+    private localStorageService: LocalStorageService,
   ) { }
 
   ngOnInit(): void {
@@ -33,8 +35,10 @@ export class LoginComponent implements OnInit {
     this.http.post('http://localhost/ars_moderna/backend/public/api/login', this.form?.getRawValue())
       .subscribe((data: any)=> {
         this.token = data;
+
         localStorage.setItem('token', this.token.jwt);
         this.authService.authUser().subscribe((next: any) => {
+          this.localStorageService.store('role',next.role);
           if (next.role == 1) {
             this.router.navigate(['dashboard'])
           } else {

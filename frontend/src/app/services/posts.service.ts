@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -21,4 +21,13 @@ export class PostsService {
     return this.http.get(this.RootURL+'/post/'+id);
   }
 
+  createPost(values:any){
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+
+    return this.http.post(this.RootURL+'/posts', values, {
+      headers: headers
+    });
+  }
 }

@@ -121,14 +121,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id){
+
+    }
+
+    public function edit_user(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'role' => 'required',
-            //            'password' => 'required|min:8',
+            //'isArtist' => 'required'
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
@@ -136,8 +140,8 @@ class UserController extends Controller
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        //        $user->password=Hash::make($request->input('password'));
         $user->role = $request->input('role');
+        //$user->isArtist = $request->input('isArtist');
 
         if ($user->save()) {
             $user->view_user = [

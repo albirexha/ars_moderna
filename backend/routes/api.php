@@ -49,12 +49,16 @@ Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 
 Route::resource('users',\App\Http\Controllers\UserController::class);
 
+Route::put('user/{id}',[\App\Http\Controllers\UserController::class,'edit_user']);
+
 Route::resource('artists',\App\Http\Controllers\ArtistController::class);
 Route::resource('posts',\App\Http\Controllers\PostController::class);
+Route::resource('favorites',\App\Http\Controllers\FavoriteController::class);
 
 Route::get('my_posts', [\App\Http\Controllers\PostController::class,'my_posts'])->middleware('auth:sanctum');
 Route::get('post/{id}', [\App\Http\Controllers\PostController::class,'view_post']);
-Route::get('isAdmin',['middleware' => ['admin','auth:sanctum']],'isAdmin');
+
+Route::get('isAdmin',[AuthController::class,'isAdmin'])->middleware('auth:sanctum');
 
 //Route::group(['middleware' => ['admin']], function () {
 //    Route::get(,[\App\Http\Controllers\UserController::class,'user_posts']);
