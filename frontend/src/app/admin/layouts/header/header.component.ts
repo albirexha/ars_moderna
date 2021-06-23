@@ -21,13 +21,13 @@ export class HeaderComponent implements OnInit {
   userId: any = '';
   userRole: any = '';
   userName: any = '';
+
   ngOnInit(): void {
     this.authService.authUser().subscribe(
       (user:any)=>{
         this.userId = user.id;
         this.userRole = user.role;
         this.userName = user.name;
-        console.log(this.userRole);
       }
     )
   }

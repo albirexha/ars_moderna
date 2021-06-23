@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import {AddUserComponent} from "../add-user/add-user.component";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {EditUserComponent} from "../edit-user/edit-user.component";
+import Swal from 'sweetalert2';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users-list',
@@ -15,8 +17,9 @@ export class UsersListComponent implements OnInit {
 
   constructor(
     private usersService : UsersService,
-    private dialog : MatDialog
-    ) {
+    private dialog : MatDialog,
+    private toastr: ToastrService,
+  ) {
     this.dataSource = new MatTableDataSource;
   }
 
@@ -58,4 +61,22 @@ export class UsersListComponent implements OnInit {
     });
   }
 
+  onDelete(id: string){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, go ahead.',
+      cancelButtonText: 'No, let me think.'
+    })
+      .then((willDelete: any) => {
+        if (willDelete.value) {
+          this.usersService.deleteUser(id).toPromise().then(data => {
+            this.toastr.error("User is successfully deleted!");
+            this.getUsers();
+          });
+        }
+      });
+  }
 }

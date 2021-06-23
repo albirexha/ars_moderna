@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, NgForm} from "@angular/forms";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-//import Swal from 'sweetalert2/dist/sweetalert2.js';
 import {PostsService} from "../../../services/posts.service";
 import {MatDialogRef} from "@angular/material/dialog";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-add-post',
@@ -15,77 +14,38 @@ export class AddPostComponent implements OnInit {
   constructor(
     private http:HttpClient,
     private postService: PostsService,
-    private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<AddPostComponent>,
+    private toastr: ToastrService,
 
   ) { }
 
   ngOnInit(): void {
   }
 
+  docs: any;
 
-  /* file upload */
-  /* Variabe to store file data */
-  filedata:any;
-  /* File onchange event */
-  fileEvent(e:any){
-    this.filedata = e.target.files[0];
-  }
-
-  /* Upload button functioanlity */
-  onSubmitform(f: NgForm) {
-
-    var myFormData = new FormData();
-    myFormData.append('image', this.filedata);
-    /* Image Post Request */
-
-  }
-  /* file upload */
-
-  form: FormGroup = new FormGroup({
-    title: new FormControl(''),
-    user_id: new FormControl(''),
-  });
-
-  onSubmit() {
-    if (this.form.valid) {
-
-      // this.form.patchValue({
-      //   image: this.filedata
-      // })
-
-
-      // this.postService.createPost(this.form.value).subscribe(data=>{
-      //   console.log(data);
-      //   // Swal.fire({
-      //   //   title: 'Hurray!!',
-      //   //   text:   'asd',
-      //   //   icon: 'success'
-      //   // });
-      // });
-
-
-    }
+  uploads(event:any) {
+    this.docs = <File>event.target.files;
   }
 
   onSubmit1(f: any){
-    var myFormData = new FormData();
-    const headers = new HttpHeaders();
+    const formData = new FormData();
+    for(var i =  0; i <  this.docs.length; i++)  {
+      formData.append("images[]",  this.docs[i]);
+    }
 
+    formData.append('title', f.title);
+    formData.append('user_id', f.user_id);
 
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', 'application/json');
-    myFormData.append('image', this.filedata);
-    myFormData.append('title', f.title);
-    myFormData.append('user_id', f.user_id);
-    console.log(f.user_id);
-
-    this.postService.createPost(myFormData).subscribe(data=>{
-      console.log(data);
-      this.form.reset();
+    this.postService.createPost(formData).subscribe(data=>{
       this.dialogRef.close();
+      this.toastr.success('Post created!');
+    },error => {
+      if(error.status == 401)
+        this.toastr.error(error.error);
+      else
+        this.toastr.error("Some errors occured. Please try again.");
     })
-
   }
 
 }

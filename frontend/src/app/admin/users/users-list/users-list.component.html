@@ -1,6 +1,4 @@
 <div class="wrapper">
-  <app-header></app-header>
-  <app-sidebar></app-sidebar>
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -74,9 +72,9 @@
                 <button mat-icon-button (click)="onEdit(user)" matTooltip="Edit">
                   <mat-icon>launch</mat-icon>
                 </button>
-<!--                <button mat-icon-button color='warn' (click)="onDelete(row.id)" matTooltip="Delete">-->
-<!--                  <mat-icon>delete_outline</mat-icon>-->
-<!--                </button>-->
+                <button mat-icon-button color='warn' (click)="onDelete(user.id)" matTooltip="Delete">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
               </td>
             </ng-container>
 
@@ -91,3 +89,4 @@
   </div>
   <app-footer></app-footer>
 </div>
+

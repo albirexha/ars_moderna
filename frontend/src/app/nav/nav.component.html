@@ -6,7 +6,7 @@
   </ul>
 
   <ul class="navbar-nav my-2 my-lg-0">
-    <ng-container *ngIf="authenticated">
+    <ng-container *ngIf="isLogged">
       <li class="nav-item">
         <a routerLink="login" class="nav-link" (click)="logout()">Logout</a>
       </li>
@@ -18,7 +18,7 @@
       </li>
     </ng-container>
 
-    <ng-container *ngIf="!authenticated">
+    <ng-container *ngIf="!isLogged">
       <li class="nav-item">
         <a routerLink="login" class="nav-link">Login</a>
       </li>

@@ -2,56 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8846cc58-eb50-419e-841a-9a4fee4320cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/FavoriteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Models/Favorites.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2021_06_21_121140_create_favorites_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/074619-modules (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/074914-class diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/075137-our_team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/075533-about_us.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/095301-transkripta1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/095513-Ibrahim Nimani.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/100306-861a4abe_2fec_44aa_aa21_c79ceca1cdc3_660_080520125004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/100319-861a4abe_2fec_44aa_aa21_c79ceca1cdc3_660_080520125004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/140145-861a4abe_2fec_44aa_aa21_c79ceca1cdc3_660_080520125004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/141057-861a4abe_2fec_44aa_aa21_c79ceca1cdc3_660_080520125004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/141222-861a4abe_2fec_44aa_aa21_c79ceca1cdc3_660_080520125004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/img/141656-861a4abe_2fec_44aa_aa21_c79ceca1cdc3_660_080520125004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Models/Images.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2021_06_22_092009_create_images_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin.guard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/layouts/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/layouts/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/add-user/add-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/add-user/add-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/layouts/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/layouts/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +202,7 @@
       <workItem from="1621590469389" duration="14288000" />
       <workItem from="1621709832673" duration="1879000" />
       <workItem from="1621845241635" duration="46718000" />
-      <workItem from="1622719173287" duration="128249000" />
+      <workItem from="1622719173287" duration="161708000" />
     </task>
     <servers />
   </component>
@@ -275,13 +256,15 @@
       <screen x="1600" y="0" width="1680" height="1010" />
     </state>
     <state x="2074" y="0" width="731" height="1010" key="find.popup/0.0.1600.860/1600.0.1680.1010@1600.0.1680.1010" timestamp="1623249572748" />
-    <state x="372" y="192" key="run.anything.popup" timestamp="1622031378516">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="-1289" y="73" width="840" height="1034" key="run.anything.popup" timestamp="1624446335294">
+      <screen x="-1680" y="-152" width="1680" height="1010" />
     </state>
+    <state x="-1289" y="73" width="840" height="1034" key="run.anything.popup/0.0.1600.860/-1680.-152.1680.1010@-1680.-152.1680.1010" timestamp="1624446335294" />
     <state x="372" y="192" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1622031378516" />
-    <state x="2019" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1623145877097">
-      <screen x="1600" y="0" width="1680" height="1010" />
+    <state x="-1261" y="-153" width="840" height="1034" key="search.everywhere.popup" timestamp="1624363269913">
+      <screen x="-1680" y="-152" width="1680" height="1010" />
     </state>
+    <state x="-1261" y="-153" width="840" height="1034" key="search.everywhere.popup/0.0.1600.860/-1680.-152.1680.1010@-1680.-152.1680.1010" timestamp="1624363269913" />
     <state x="2019" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.860/1600.0.1680.1010@1600.0.1680.1010" timestamp="1623145877097" />
   </component>
 </project>

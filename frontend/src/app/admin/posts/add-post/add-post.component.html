@@ -6,7 +6,7 @@
 
 
 <form #f="ngForm" (ngSubmit)="onSubmit1(f.value)">
-  <input type="file"  name="myFile" (change)="fileEvent($event)"/>
+  <input type="file" required name="images" (change)="uploads($event)" multiple>
 
   <div class="row py-2">
     <!--    <input type="hidden" formControlName="id">-->
@@ -23,13 +23,13 @@
       </mat-form-field>
     </div>
 
-  <div class="row">
-    <div class="col-sm-12 col-md-12 text-right">
-      <button class="mb-2" mat-raised-button>
-        <mat-icon>add</mat-icon>Add Post
-      </button>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 text-right">
+        <button class="mb-2" mat-raised-button>
+          <mat-icon>add</mat-icon>Add Post
+        </button>
+      </div>
     </div>
-  </div>
   </div>
 </form>
 

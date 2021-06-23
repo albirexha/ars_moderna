@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Auth} from "../classes/auth";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {AuthService} from "../services/auth.service";
+import {LocalStorageService} from "ngx-webstorage";
 
 @Component({
   selector: 'app-nav',
@@ -12,8 +14,14 @@ export class NavComponent implements OnInit {
   authenticated = false;
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
+    private localStorageService: LocalStorageService
+
   ) { }
+
+  isLogged: any;
+
 
   ngOnInit(): void {
     Auth.authEmitter.subscribe(
@@ -21,14 +29,18 @@ export class NavComponent implements OnInit {
         this.authenticated = authenticated;
       }
     )
+
+    this.isLogged = this.authService.loggedIn();
   }
 
-  logout(): void{
-    this.http.post('http://localhost/ars_moderna/backend/public/api/logout', {})
-      .subscribe(()=>{
+  logout(){
+    this.authService.logout().subscribe(
+      () => {
         localStorage.removeItem('token');
+        this.localStorageService.clear('role');
+        // localStorage.removeItem('user_id');
         this.router.navigate(['/']);
-
-      });
+      }
+    );
   }
 }
