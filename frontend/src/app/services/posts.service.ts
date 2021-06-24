@@ -21,6 +21,10 @@ export class PostsService {
     return this.http.get(this.RootURL+'/post/'+id);
   }
 
+  deletePost(id: string){
+    return this.http.delete(this.RootURL + '/posts/' + id);
+  }
+
   createPost(values:any){
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
@@ -30,4 +34,5 @@ export class PostsService {
       headers: headers
     });
   }
+
 }

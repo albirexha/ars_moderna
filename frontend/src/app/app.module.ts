@@ -36,6 +36,7 @@ import { AdminPostsListComponent } from './admin/posts/admin-posts-list/admin-po
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import {AdminGuard} from "./admin.guard";
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -76,7 +77,14 @@ import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
     MatCardModule,
     MatGridListModule,
     NgxWebstorageModule.forRoot(),
-
+    ToastrModule.forRoot({
+      timeOut: 6000,
+      progressBar: false,
+      progressAnimation: 'increasing',
+      preventDuplicates: true,
+      positionClass: 'toast-bottom-right',
+      tapToDismiss: true,
+    }),
   ],
   providers: [
     AdminGuard,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Images;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -51,46 +52,44 @@ class PostController extends Controller
         $validator = Validator::make($request->all(), [
             'user_id' => 'required',
             'title' => 'required',
+            'images' => 'required',
+            'images.*' => 'image | mimes : jpg, jpeg, png',
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 401);
+            return response()->json('Invalid data provided!', 401);
         }
 
-        $picture = "";
+        $images  = [];
 
-        if ($request->hasFile('image'))
-        {
-            $file      = $request->file('image');
-            $filename  = $file->getClientOriginalName();
-            $extension =  $file->getClientOriginalExtension();
+        foreach ($request->file('images') as $photo) {
+            $filename  = $photo->getClientOriginalName();
+            $extension =  $photo->getClientOriginalExtension();
             $picture   = date('His').'-'.$filename;
-            //move image to public/img folder
-            $path = $file->storeAs('public/imgs', $picture );
-
-            //$file->move(public_path('img'), $picture);
-            //return response()->json(["message" => "Image Uploaded Succesfully"]);
+            $images[] = $picture;
+            $path = $photo->storeAs('public/imgs', $picture );
         }
 
         $post = new Post();
 
         $post->title = $request->input('title');
         $user = User::findOrFail($request->input('user_id'));
-        $post->image = $picture;
+        $post->image = $images[0];
 
         if ($user->post()->save($post)) {
-            $post->view_post = [
-                'href' => 'api/post/' . $post->id,
-                'method' => 'GET'
-            ];
+            foreach ($images as $imagee){
+                $image = new Images();
+                $image->post_id = $post->id;
+                $image->image = $imagee;
+                $image->save();
+            }
             $respose = [
-                'msg' => 'Post created',
+                'msg' => 'Post created!',
                 'post' => $post
             ];
             return response()->json([$respose], 201);
         }
         return response()->json('Post failed!', 404);
-
     }
 
     /**
@@ -135,7 +134,21 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo 'asd';
+
+        $user = Auth::user();
+        $post = Post::findOrFail($id);
+        $postCheck = Post::where([['id',$id],['user_id',$user->id]])->count();
+        if($user->role == 1 || $postCheck){
+            if ($post->delete()) {
+                return response()->json('Post deleted!', 200);
+            }
+            return response()->json('Post deleting failed!', 404);
+        }
+        return response()->json('No authorization!', 401);
+    }
+
+    public function deletePost($id){
     }
 
     public function my_posts(){

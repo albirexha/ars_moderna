@@ -17,10 +17,28 @@
         <!-- Add icons to the links using the .nav-icon class
        with font-awesome or any other icon font library -->
         <li class="nav-item has-treeview">
-          <a routerLink='/dashboard' [routerLinkActive]="['active']" class="nav-link">
+          <a routerLink='/dashboard'  class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview" >
+          <a [routerLink]="['/dashboard/users']" [routerLinkActive]="['active']" class="nav-link">
+            <i class="nav-icon far fa-user"></i>
+            <p>
+              Users
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item has-treeview" >
+          <a [routerLink]="['/dashboard/admin-posts']" [routerLinkActive]="['active']" class="nav-link">
+            <i class="nav-icon far fa-user"></i>
+            <p>
+              Posts
             </p>
           </a>
         </li>
@@ -43,8 +61,12 @@
           </a>
         </li>
       </ul>
+
     </nav>
+
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
 </aside>
+<router-outlet></router-outlet>
+

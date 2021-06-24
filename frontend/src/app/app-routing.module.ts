@@ -21,10 +21,15 @@ const routes: Routes = [
   {path: 'posts', component: PostsListComponent},
   {path: 'my_posts', component: MyPostsListComponent},
   {path: 'single-post/:id' ,component: SinglePostComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard],
+    children:[
+      //{ path: '', component: HomeComponent },
+      { path: 'users', component: UsersListComponent },
+      { path: 'admin-posts', component: AdminPostsListComponent },
+    ]
+  },
+
   { path: '404', component: NotFoundComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
-  { path: 'users', component: UsersListComponent },
-  { path: 'admin-posts', component: AdminPostsListComponent },
   { path: '**', component: NotFoundComponent },
 
 

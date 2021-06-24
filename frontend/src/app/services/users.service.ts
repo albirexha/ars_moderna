@@ -23,6 +23,10 @@ export class UsersService {
     return this.http.put(this.RootURL + "/user/" + values.id, values);
   }
 
+  deleteUser(id: string){
+    return this.http.delete(this.RootURL + '/users/' + id);
+  }
+
   editForm: FormGroup = new FormGroup({
     id: new FormControl(null),
     name: new FormControl('', Validators.required),
@@ -30,5 +34,4 @@ export class UsersService {
     role: new FormControl('', Validators.required),
     //isArtist: new FormControl('', Validators.required),
   });
-
 }
