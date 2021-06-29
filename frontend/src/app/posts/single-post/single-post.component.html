@@ -16,6 +16,13 @@
         </ul>
       </div>
       <div class="col-lg-9 col-md-9 col-sm-12 post-content">
+        <div *ngIf="checkLoggedIn()">
+          <i class="likeBtn fa"
+             [class.fa-thumbs-up]="!isLiked"
+             [class.fa-thumbs-down]="isLiked" (click)="like()">
+            {{likeCounter}}
+          </i>
+        </div>
         <img src="http://localhost/ars_moderna/backend/storage/app/public/imgs/test.jpg" style="width: 100%; height: 500px;" class="img-responsive" alt="image">
 
         <p class="lead">Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
@@ -34,9 +41,8 @@
 
         </blockquote>
 
-        <div class="image-block" >
-          <img style="width: 300px; height: 300px;" src="https://static.pexels.com/photos/268455/pexels-photo-268455.jpeg" class="img-responsive" >
-        </div>
+<!--        <ng-image-slider [images]="imageObject" #nav></ng-image-slider>-->
+        <ng-image-slider [images]="sliderImages" #nav></ng-image-slider>
 
         <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 

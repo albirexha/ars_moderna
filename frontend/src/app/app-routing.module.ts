@@ -13,6 +13,7 @@ import {UsersListComponent} from "./admin/users/users-list/users-list.component"
 import {AuthGuard} from "./auth.guard";
 import {AdminGuard} from "./admin.guard";
 import {AdminPostsListComponent} from "./admin/posts/admin-posts-list/admin-posts-list.component";
+import {CategoriesListComponent} from "./admin/categories/categories-list/categories-list.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
       //{ path: '', component: HomeComponent },
       { path: 'users', component: UsersListComponent },
       { path: 'admin-posts', component: AdminPostsListComponent },
+      { path: 'categories', component: CategoriesListComponent },
     ]
   },
 

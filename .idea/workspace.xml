@@ -2,37 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8846cc58-eb50-419e-841a-9a4fee4320cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/app/Models/Images.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2021_06_22_092009_create_images_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/LikeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Models/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Models/Like.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2021_06_23_124747_create_categories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2021_06_24_140248_create_likes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/add-category/add-category.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/add-category/add-category.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/add-category/add-category.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/add-category/add-category.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/categories-list/categories-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/categories-list/categories-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/categories-list/categories-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/admin/categories/categories-list/categories-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/categories.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/likes.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2021_05_24_124538_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2021_05_24_124538_create_posts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/layouts/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/layouts/header/header.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/layouts/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/layouts/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/add-post/add-post.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/posts/admin-posts-list/admin-posts-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +210,8 @@
       <workItem from="1621590469389" duration="14288000" />
       <workItem from="1621709832673" duration="1879000" />
       <workItem from="1621845241635" duration="46718000" />
-      <workItem from="1622719173287" duration="161708000" />
+      <workItem from="1622719173287" duration="182427000" />
+      <workItem from="1624864444775" duration="18821000" />
     </task>
     <servers />
   </component>
@@ -213,16 +222,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="554" y="11" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621860549193">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="-1098" y="-152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1624453689896">
+      <screen x="-1680" y="-152" width="1680" height="1010" />
     </state>
+    <state x="-1098" y="-152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860/-1680.-152.1680.1010@-1680.-152.1680.1010" timestamp="1624453689896" />
     <state x="554" y="11" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1621860549192" />
-    <state x="2157" y="217" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623158511765">
-      <screen x="1600" y="0" width="1680" height="1010" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1624544684874">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/1600.-150.1680.1010@0.0.1600.860" timestamp="1621605721632" />
     <state x="2157" y="217" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/1600.0.1680.1010@1600.0.1680.1010" timestamp="1623158511765" />
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1621862530383" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1624544684874" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1622469348353">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -248,9 +258,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="143" y="0" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1621932660805" />
-    <state x="496" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1621845257866">
+    <state x="496" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1624864470869">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
+    <state x="496" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860/-1680.-152.1680.1010@0.0.1600.860" timestamp="1624864470869" />
     <state x="496" y="254" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1621845257866" />
     <state x="2074" y="0" width="731" height="1010" key="find.popup" timestamp="1623249572748">
       <screen x="1600" y="0" width="1680" height="1010" />

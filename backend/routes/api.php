@@ -49,6 +49,7 @@ Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 
 Route::group(['middleware' => ['admin','auth:sanctum']], function () {
     Route::resource('users', \App\Http\Controllers\UserController::class);
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 });
 
 Route::put('user/{id}',[\App\Http\Controllers\UserController::class,'edit_user']);
@@ -64,6 +65,17 @@ Route::get('my_posts', [\App\Http\Controllers\PostController::class,'my_posts'])
 Route::get('post/{id}', [\App\Http\Controllers\PostController::class,'view_post']);
 
 Route::get('isAdmin',[AuthController::class,'isAdmin'])->middleware('auth:sanctum');
+
+Route::get('cat_posts/{id}',[\App\Http\Controllers\CategoryController::class,'getPostsByCategory']);
+
+//Route::resource('likes',\App\Http\Controllers\LikeController::class)->middleware('auth:sanctum');
+
+Route::get('new_like/{id}',[\App\Http\Controllers\LikeController::class,'new_like'])->middleware('auth:sanctum');
+Route::get('likes_no/{id}',[\App\Http\Controllers\PostController::class,'likes_number']);
+
+Route::get('check_like/{id}',['App\Http\Controllers\PostController','check_like'])->middleware('auth:sanctum');
+
+Route::get('top_posts',[\App\Http\Controllers\PostController::class,'top_posts']);
 
 //Route::group(['middleware' => ['admin']], function () {
 //    Route::get(,[\App\Http\Controllers\UserController::class,'user_posts']);
