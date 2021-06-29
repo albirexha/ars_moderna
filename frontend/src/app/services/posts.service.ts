@@ -35,4 +35,7 @@ export class PostsService {
     });
   }
 
+  likes_no(id: String){
+    return this.http.get(this.RootURL+'/likes_no/'+id);
+  }
 }

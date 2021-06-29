@@ -17,11 +17,13 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             //$table->index('user_id');
             $table->integer('user_id')->unsigned();
+            $table->integer('total_likes')->unsigned();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title')->index();
-            $table->string('description')->index()->nullable();
+            $table->string('tools')->index();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

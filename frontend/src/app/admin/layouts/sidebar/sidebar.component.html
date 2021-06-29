@@ -3,7 +3,7 @@
   <!-- Brand Logo -->
   <a routerLink='/dashboard' class="brand-link">
     <!-- <img src="assets/img/funds_logo.png" alt="Logo" class="brand-image img-circle"> -->
-    <span class="brand-text font-weight-light ml-3">Funds Management</span>
+    <span class="brand-text font-weight-light ml-3">Ars Moderna Panel</span>
   </a>
 
   <!-- Sidebar -->
@@ -53,10 +53,10 @@
 <!--        </li>-->
 
         <li class="nav-item has-treeview">
-          <a routerLink="/posts" [routerLinkActive]="['active']" class="nav-link">
+          <a [routerLink]="['/dashboard/categories']" [routerLinkActive]="['active']" class="nav-link">
             <i class="nav-icon fas fa-money-bill-alt"></i>
             <p>
-              Funds
+              Categories
             </p>
           </a>
         </li>

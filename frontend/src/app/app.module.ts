@@ -37,6 +37,11 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
 import {AdminGuard} from "./admin.guard";
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 import {ToastrModule} from "ngx-toastr";
+import { CategoriesListComponent } from './admin/categories/categories-list/categories-list.component';
+import { AddCategoryComponent } from './admin/categories/add-category/add-category.component';
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {NgImageSliderModule} from "ng-image-slider";
 
 @NgModule({
   declarations: [
@@ -58,6 +63,8 @@ import {ToastrModule} from "ngx-toastr";
     AddPostComponent,
     AdminPostsListComponent,
     EditUserComponent,
+    CategoriesListComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +92,9 @@ import {ToastrModule} from "ngx-toastr";
       positionClass: 'toast-bottom-right',
       tapToDismiss: true,
     }),
+    MatOptionModule,
+    MatSelectModule,
+    NgImageSliderModule
   ],
   providers: [
     AdminGuard,

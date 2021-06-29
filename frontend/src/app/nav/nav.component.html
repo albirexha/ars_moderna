@@ -8,23 +8,23 @@
   <ul class="navbar-nav my-2 my-lg-0">
     <ng-container *ngIf="isLogged">
       <li class="nav-item">
-        <a routerLink="login" class="nav-link" (click)="logout()">Logout</a>
+        <a routerLink="/login" class="nav-link" (click)="logout()">Logout</a>
       </li>
       <li class="nav-item">
-        <a routerLink="posts" class="nav-link">Posts</a>
+        <a routerLink="/posts" class="nav-link">Posts</a>
       </li>
       <li class="nav-item">
-        <a routerLink="my_posts" class="nav-link">My Posts</a>
+        <a routerLink="/my_posts" class="nav-link">My Posts</a>
       </li>
     </ng-container>
 
     <ng-container *ngIf="!isLogged">
       <li class="nav-item">
-        <a routerLink="login" class="nav-link">Login</a>
+        <a routerLink="/login" class="nav-link">Login</a>
       </li>
 
       <li class="nav-item">
-        <a routerLink="register" class="nav-link">Register</a>
+        <a routerLink="/register" class="nav-link">Register</a>
       </li>
     </ng-container>
   </ul>
