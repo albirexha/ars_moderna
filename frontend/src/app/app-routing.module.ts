@@ -14,6 +14,8 @@ import {AuthGuard} from "./auth.guard";
 import {AdminGuard} from "./admin.guard";
 import {AdminPostsListComponent} from "./admin/posts/admin-posts-list/admin-posts-list.component";
 import {CategoriesListComponent} from "./admin/categories/categories-list/categories-list.component";
+import {NewArtistComponent} from "./posts/new-artist/new-artist.component";
+import {NewPostComponent} from "./posts/new-post/new-post.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'posts', component: PostsListComponent},
   {path: 'my_posts', component: MyPostsListComponent},
   {path: 'single-post/:id' ,component: SinglePostComponent},
+  {path: 'new_post' ,component: NewPostComponent},
+  {path: 'new_artist' ,component: NewArtistComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard],
     children:[
       //{ path: '', component: HomeComponent },

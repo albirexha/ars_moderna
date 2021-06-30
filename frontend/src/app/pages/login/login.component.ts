@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', this.token.jwt);
         this.authService.authUser().subscribe((next: any) => {
           this.localStorageService.store('role',next.role);
+          this.localStorageService.store('isArtist',next.isArtist);
           if (next.role == 1) {
             this.router.navigate(['dashboard'])
           } else {

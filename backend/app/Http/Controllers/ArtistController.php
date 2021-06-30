@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -19,23 +20,28 @@ class ArtistController extends Controller
         //
     }
 
-
-    public function store(Request $request)
+    public function new_artist(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
             'phone' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'birthday' => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
         }
 
+        $user_id = Auth::user()->id;
+        $user = Auth::user();
         $artist = new Artist();
 
         $artist->phone = $request->input('phone');
-        $user = User::findOrFail($request->input('user_id'));
+        $artist->address = $request->input('address');
+        $artist->country = $request->input('country');
+        $artist->birthday = $request->input('birthday');
 
-        if (!Artist::where('user_id', $request->input('user_id'))->exists()) {
+        if (!Artist::where('user_id', $user_id)->exists()) {
             if ($user->artist()->save($artist)) {
                 $artist->view_artist = [
                     'href' => 'api/artist/' . $artist->id,
@@ -51,11 +57,14 @@ class ArtistController extends Controller
 
                 return response()->json([$respose], 201);
             }
-
-            return response()->json('Artist is not created', 404);
+            return response()->json('Artist is not created', 406);
         }
 
-        return response()->json('Artist exists!', 404);
+        return response()->json('Artist exists!', 406);
+    }
+
+    public function store(Request $request)
+    {
 
     }
 

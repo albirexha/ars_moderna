@@ -38,4 +38,8 @@ export class PostsService {
   likes_no(id: String){
     return this.http.get(this.RootURL+'/likes_no/'+id);
   }
+
+  posts_cat(id: String){
+    return this.http.get(this.RootURL+'/cat_posts/'+id);
+  }
 }

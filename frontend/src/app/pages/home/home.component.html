@@ -1,6 +1,19 @@
 <app-nav></app-nav>
 
 <div class="container">
+
+  <div *ngIf="!isArtist">
+    <button class="mb-2" mat-raised-button (click)="new_artist()">
+      <mat-icon>add</mat-icon>Create
+    </button>
+  </div>
+
+  <div *ngIf="isArtist">
+    <button class="mb-2" mat-raised-button routerLink="/new_post" >
+      <mat-icon>add</mat-icon>New Post
+    </button>
+  </div>
+
   <h1>{{message}}</h1>
 
   <div class="album py-5 bg-light">
@@ -25,17 +38,5 @@
         </div>
       </div>
     </div>
-
-
-<!--    <mat-grid-list cols="2" rowHeight="200px">-->
-<!--      <mat-grid-tile *ngFor="let post of posts">-->
-<!--        <mat-card class="my-card">-->
-<!--          <mat-card-title>{{post.title}}</mat-card-title>-->
-<!--          <mat-card-content>-->
-<!--            {{post.created_at}}-->
-<!--          </mat-card-content>-->
-<!--        </mat-card>-->
-<!--      </mat-grid-tile>-->
-<!--    </mat-grid-list>-->
   </div>
 </div>

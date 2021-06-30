@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostsService} from "../../services/posts.service";
 import {Router} from "@angular/router";
+import {CategoriesService} from "../../services/categories.service";
 
 @Component({
   selector: 'app-posts-list',
@@ -10,17 +11,25 @@ import {Router} from "@angular/router";
 export class PostsListComponent implements OnInit {
 
   posts: any;
+  categories: any;
 
-  columnsToDisplay = ['title'];
 
   constructor(
     private postService: PostsService,
-    private _router: Router
+    private _router: Router,
+    private categoryService: CategoriesService
 
   ){}
 
   ngOnInit(): void {
     this.getPosts();
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categoryService.getCategories().toPromise().then((data: any) => {
+      this.categories = data.categories;
+    });
   }
 
   getPosts(){
@@ -30,4 +39,9 @@ export class PostsListComponent implements OnInit {
     });
   }
 
+  getPostsByCat(id:any){
+    this.postService.posts_cat(id).toPromise().then((data: any)=>{
+      this.posts = data.posts;
+    })
+  }
 }
