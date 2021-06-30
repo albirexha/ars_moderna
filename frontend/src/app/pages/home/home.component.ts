@@ -3,6 +3,10 @@ import {HttpClient} from "@angular/common/http";
 import {Auth} from "../../classes/auth";
 import {AuthService} from "../../services/auth.service";
 import {PostsService} from "../../services/posts.service";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {AddUserComponent} from "../../admin/users/add-user/add-user.component";
+import {NewArtistComponent} from "../../posts/new-artist/new-artist.component";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-home',
@@ -16,11 +20,14 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-    private postsService: PostsService
+    private postsService: PostsService,
+    private dialog : MatDialog,
   ) { }
 
   ngOnInit(): void {
-      this.authService.authUser()
+    this.checkArtist();
+
+    this.authService.authUser()
       .subscribe(
         (user:any)=>{
           this.message = 'Hi '+ user.name;
@@ -36,5 +43,26 @@ export class HomeComponent implements OnInit {
         this.posts = data.posts;
       });
   }
+
+
+  new_artist(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    dialogConfig.backdropClass = 'backdropBackground';
+
+    this.dialog.open(NewArtistComponent, dialogConfig).beforeClosed().toPromise().then(result => {
+      this.checkArtist();
+    });
+  }
+
+  isArtist: any = 1;
+
+  async checkArtist() {
+    var data: any = await this.authService.authUserArtist().toPromise();
+    this.isArtist = data.isArtist;
+  }
+
 
 }

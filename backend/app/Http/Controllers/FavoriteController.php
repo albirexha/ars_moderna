@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Favorites;
+use App\Models\Favorite;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -53,7 +53,7 @@ class FavoriteController extends Controller
             return response()->json('Invalid data!', 404);
         }
 
-        $favorite = new Favorites();
+        $favorite = new Favorite();
         $favorite->user_id = $user_id;
         $favorite->post_id = $post_id;
 

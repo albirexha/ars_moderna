@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Images;
 use App\Models\Like;
 use App\Models\Post;
@@ -214,5 +215,14 @@ class PostController extends Controller
             return response()->json('Liked',201);
         }
         return response()->json('Not liked',202);
+    }
+
+    public function getPostsByCategory($id){
+        $posts = Category::findOrFail($id)->posts()->get();
+        $respose = [
+            'msg' => 'Posts',
+            'posts' => $posts
+        ];
+        return response()->json($respose, 201);
     }
 }

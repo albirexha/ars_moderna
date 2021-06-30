@@ -27,6 +27,10 @@ export class UsersService {
     return this.http.delete(this.RootURL + '/users/' + id);
   }
 
+  addArtist(values: any){
+    return this.http.post(this.RootURL+'/new_artist', values);
+  }
+
   editForm: FormGroup = new FormGroup({
     id: new FormControl(null),
     name: new FormControl('', Validators.required),

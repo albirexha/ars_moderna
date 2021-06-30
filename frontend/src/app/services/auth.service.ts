@@ -32,4 +32,8 @@ export class AuthService{
     return this.http.get(this.RootURL + "/isAdmin");
   }
 
+  authUserArtist(){
+    return this.http.get(this.RootURL + "/authUser");
+  }
+
 }

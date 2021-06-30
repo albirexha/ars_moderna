@@ -26,12 +26,6 @@ class CategoryController extends Controller
 
     }
 
-    public function getPostsByCategory($id){
-        $posts = Category::findOrFail($id)->posts()->get();
-        foreach ($posts as $post){
-            echo $post->title;
-        }
-    }
 
     /**
      * Store a newly created resource in storage.

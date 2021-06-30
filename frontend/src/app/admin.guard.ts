@@ -17,39 +17,20 @@ export class AdminGuard implements CanActivate {
   ) {
   }
 
-  //role: any;
-
-  canActivate(): boolean {
-
-    if(this.localStorageService.retrieve('role') && this.localStorageService.retrieve('role') == 1){
+  async canActivate(): Promise<boolean> {
+    var userRolee = await this.getUserRole();
+    if (userRolee == 1) {
       return true;
-    }
-    else {
+    } else {
       this.router.navigate(['']);
       return false;
-      }
     }
+  }
 
-    // var role = this.authService.userRole();
-    //
-    // console.log(this.authService.userRole());
-    //
-    // // this.authService.authUser().toPromise().then((data: any) => {
-    // //   // console.log(data);
-    // //   this.role = data.role;
-    // //   console.log(this.role);
-    // // });
-    //
-    // console.log(role);
-    //
-    // if (role == 1) {
-    //   // console.log(data.role);
-    //   //this.router.navigate(['dashboard']);
-    //   return true;
-    // }else {
-    //   this.router.navigate(['']);
-    //   return false;
-    // }
-  //}
+  async getUserRole(){
+    var data:any = await this.authService.authUserArtist().toPromise();
+    return data.role;
+  }
+
 }
 

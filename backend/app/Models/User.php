@@ -29,5 +29,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
     protected $hidden = ['password'];
 }

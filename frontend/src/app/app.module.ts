@@ -42,6 +42,8 @@ import { AddCategoryComponent } from './admin/categories/add-category/add-catego
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {NgImageSliderModule} from "ng-image-slider";
+import { NewArtistComponent } from './posts/new-artist/new-artist.component';
+import { NewPostComponent } from './posts/new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import {NgImageSliderModule} from "ng-image-slider";
     EditUserComponent,
     CategoriesListComponent,
     AddCategoryComponent,
+    NewArtistComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,

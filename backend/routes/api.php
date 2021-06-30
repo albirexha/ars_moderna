@@ -49,12 +49,13 @@ Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 
 Route::group(['middleware' => ['admin','auth:sanctum']], function () {
     Route::resource('users', \App\Http\Controllers\UserController::class);
-    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 });
+Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 
 Route::put('user/{id}',[\App\Http\Controllers\UserController::class,'edit_user']);
 
-Route::resource('artists',\App\Http\Controllers\ArtistController::class);
+Route::post('new_artist',[\App\Http\Controllers\ArtistController::class,'new_artist'])->middleware('auth:sanctum');
+
 Route::resource('posts',\App\Http\Controllers\PostController::class,['except' => [ 'destroy']]);
 
 Route::delete('posts/{id}',[\App\Http\Controllers\PostController::class,'destroy'])->middleware('auth:sanctum');
@@ -66,7 +67,7 @@ Route::get('post/{id}', [\App\Http\Controllers\PostController::class,'view_post'
 
 Route::get('isAdmin',[AuthController::class,'isAdmin'])->middleware('auth:sanctum');
 
-Route::get('cat_posts/{id}',[\App\Http\Controllers\CategoryController::class,'getPostsByCategory']);
+Route::get('cat_posts/{id}',[\App\Http\Controllers\PostController::class,'getPostsByCategory']);
 
 //Route::resource('likes',\App\Http\Controllers\LikeController::class)->middleware('auth:sanctum');
 
