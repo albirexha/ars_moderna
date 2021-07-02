@@ -18,12 +18,6 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-//        foreach ($users as $user) {
-//            $user->view_user = [
-//                'href' => 'v1/user/' . $user->id,
-//                'method' => 'GET'
-//            ];
-//        }
         $response = [
             'msg' => 'List of all users',
             'users' => $users
@@ -81,49 +75,21 @@ class UserController extends Controller
         //return response()->json(['success'=>$user]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-        $user = User::where('id', $id)->get();
-        // $roles=Role::all();
-        //        $user->view_user=[
-        //            'href'=>'v1/user/'.$user->id,
-        //            'method'=>'GET'
-        //        ];
+
+    public function user_id($id){
+        $user = User::findOrFail($id);
         $response = [
             'msg' => 'User Information',
             'user' => $user
         ];
-        return response()->json([$response], 200);
+        return response()->json([$response], 201);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function show($id)
     {
-        //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id){
 
-    }
 
     public function edit_user(Request $request, $id)
     {
@@ -157,15 +123,30 @@ class UserController extends Controller
         return response()->json('User is not updated');
     }
 
+    public function edit_profile(Request $request, $id)
+    {
+        $user = Auth::user();
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
 
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
 
+        if ($user->save()) {
+            $response = [
+                'msg' => "User updated",
+                'service' => $user
+            ];
+            return response()->json($response, 201);
+        }
+        return response()->json('User is not updated');
+    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $user = User::findOrFail($id);
@@ -184,6 +165,26 @@ class UserController extends Controller
             foreach ($posts as $post) {
                 echo $post->title;
             }
+        }
+    }
+
+    public function change_password(Request $request){
+        $user = Auth::user();
+        if($user) {
+            $old_password = $request->current_password;
+            $password = $request->new_password;
+            if (Auth::guard('web')->attempt(['id'=>$user->id,'password'=>$old_password])) {
+                $user->password = Hash::make($password);
+                if ($user->save()) {
+                    return response()->json('Password is successfully changed.');
+                } else {
+                    return response()->json('Password failed to change!', 404);
+                }
+            } else {
+                return response()->json('Incorrect old password, try again!', 404);
+            }
+        }else {
+            return response()->json('Password failed to change!', 404);
         }
     }
 }

@@ -16,6 +16,8 @@ import {AdminPostsListComponent} from "./admin/posts/admin-posts-list/admin-post
 import {CategoriesListComponent} from "./admin/categories/categories-list/categories-list.component";
 import {NewArtistComponent} from "./posts/new-artist/new-artist.component";
 import {NewPostComponent} from "./posts/new-post/new-post.component";
+import {UserProfileComponent} from "./users/user-profile/user-profile.component";
+import {ViewUserComponent} from "./users/view-user/view-user.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path: 'single-post/:id' ,component: SinglePostComponent},
   {path: 'new_post' ,component: NewPostComponent},
   {path: 'new_artist' ,component: NewArtistComponent},
+  {path: 'my_profile' ,component: UserProfileComponent},
+  {path: 'user/:id' ,component: ViewUserComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard],
     children:[
       //{ path: '', component: HomeComponent },

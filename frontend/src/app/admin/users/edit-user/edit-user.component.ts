@@ -17,15 +17,10 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   roles = [{"id" : 1, "name" : 'Admin'},{'id': 0, 'name': 'User'}];
-  //artist = [{"id" : 1, "name" : 'True'},{'id': 0, 'name': 'False'}];
 
   ngOnInit(): void {
-//    this.toaster();
   }
 
-  // toaster(){
-  //   this.toastr.error('User is successfully edited!');
-  // }
 
   onSubmit() {
     if (this.userService.editForm.valid) {

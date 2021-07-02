@@ -47,7 +47,10 @@
 
             <ng-container matColumnDef="role">
               <th mat-header-cell *matHeaderCellDef> Role </th>
-              <td mat-cell *matCellDef="let user"> {{user.role}} </td>
+              <td mat-cell *matCellDef="let user">
+                <div *ngIf="user.role==1">Administrator</div>
+                <div *ngIf="user.role==0">User</div>
+              </td>
             </ng-container>
 
 

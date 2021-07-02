@@ -50,9 +50,16 @@ Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 Route::group(['middleware' => ['admin','auth:sanctum']], function () {
     Route::resource('users', \App\Http\Controllers\UserController::class);
 });
+
+Route::get('user/{id}',[\App\Http\Controllers\UserController::class,'user_id']);
+
 Route::resource('categories', \App\Http\Controllers\CategoryController::class);
 
 Route::put('user/{id}',[\App\Http\Controllers\UserController::class,'edit_user']);
+Route::put('edit_profile/{id}',[\App\Http\Controllers\UserController::class,'edit_profile'])->middleware('auth:sanctum');
+
+
+Route::post('user/change-password',[\App\Http\Controllers\UserController::class,'change_password'])->middleware('auth:sanctum');
 
 Route::post('new_artist',[\App\Http\Controllers\ArtistController::class,'new_artist'])->middleware('auth:sanctum');
 

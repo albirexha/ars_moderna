@@ -31,11 +31,19 @@ export class UsersService {
     return this.http.post(this.RootURL+'/new_artist', values);
   }
 
+  getUserById(id: string){
+    return this.http.get(this.RootURL + '/user/' + id);
+  }
+
+  editProfile(values: any){
+    return this.http.put(this.RootURL + "/edit_profile/"+ values.id, values);
+  }
+
   editForm: FormGroup = new FormGroup({
     id: new FormControl(null),
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     role: new FormControl('', Validators.required),
-    //isArtist: new FormControl('', Validators.required),
+    isArtist: new FormControl('', Validators.required),
   });
 }

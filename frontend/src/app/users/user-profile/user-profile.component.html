@@ -1,0 +1,118 @@
+<app-nav></app-nav>
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+
+        <div class="col-sm-6">
+          <h1 class="text-dark m-0">User Profile</h1>
+        </div>
+
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">User Profile</li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <section class="content mb-3">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-3 col-sm-6 col-md-2 col-lg-1">
+                  <p style="font-weight: bold">Name : </p>
+                  <p style="font-weight: bold">Email : </p>
+                </div>
+                <div class="col-9 col-sm-6 col-md-4 col-lg-3">
+                  <p>{{ userData.name }}</p>
+                  <p>{{ userData.email }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              Change your data
+            </div>
+            <div class="card-body">
+              <form [formGroup]="changeDataForm" (submit)="onSubmit()">
+                <div class="row py-2">
+                  <input type="hidden" formControlName="id">
+                  <div class="col-sm-12 col-md-12">
+                    <mat-form-field>
+                      <mat-label>Name</mat-label>
+                      <input matInput #input formControlName="name" required>
+                      <mat-error
+                        *ngIf="changeDataForm.controls['name'].errors?.required">Name
+                        is required.</mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-sm-12 col-md-12">
+                    <mat-form-field>
+                      <mat-label>Email</mat-label>
+                      <input matInput #input formControlName="email" required>
+                      <mat-error
+                        *ngIf="changeDataForm.controls['email'].errors?.required">
+                        Email is required.</mat-error>
+                      <mat-error *ngIf="changeDataForm.controls['email'].errors?.email">
+                        Please enter a valid email address.</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 text-right">
+                    <button class="mb-2" mat-raised-button>
+                      <mat-icon>save</mat-icon>Save
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Change Password -->
+
+  <section class="content">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              Change your password
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12 col-md-12">
+                  <button class="mb-2" mat-raised-button color="primary" (click)="onChangePassword()">
+                    <mat-icon>password</mat-icon> Change Password
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>

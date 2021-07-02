@@ -36,4 +36,8 @@ export class AuthService{
     return this.http.get(this.RootURL + "/authUser");
   }
 
+  changePassword(values:any){
+    return this.http.post(this.RootURL + "/user/change-password", values);
+  }
+
 }

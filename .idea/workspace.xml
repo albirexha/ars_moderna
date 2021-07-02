@@ -2,39 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8846cc58-eb50-419e-841a-9a4fee4320cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/artist.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/change-password/change-password.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/change-password/change-password.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/change-password/change-password.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/change-password/change-password.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-posts/user-posts.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-posts/user-posts.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-posts/user-posts.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-posts/user-posts.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-profile/user-profile.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-profile/user-profile.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-profile/user-profile.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/user-profile/user-profile.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/posts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/custom-css/signup.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArtistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArtistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/FavoriteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Favorites.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Favorite.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/add-user/add-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/add-user/add-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/edit-user/edit-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/users/users-list/users-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +222,7 @@
       <workItem from="1621709832673" duration="1879000" />
       <workItem from="1621845241635" duration="46718000" />
       <workItem from="1622719173287" duration="182427000" />
-      <workItem from="1624864444775" duration="38253000" />
+      <workItem from="1624864444775" duration="59575000" />
     </task>
     <servers />
   </component>

@@ -2,20 +2,21 @@
 
 <div class="container">
 
-  <div *ngIf="!isArtist">
-    <button class="mb-2" mat-raised-button (click)="new_artist()">
-      <mat-icon>add</mat-icon>Create
-    </button>
+  <div *ngIf="isLogged()">
+    <div *ngIf="!isArtist">
+      <button class="mb-2" mat-raised-button (click)="new_artist()">
+        <mat-icon>add</mat-icon>Create
+      </button>
+    </div>
+
+    <div *ngIf="isArtist">
+      <button class="mb-2" mat-raised-button routerLink="/new_post" >
+        <mat-icon>add</mat-icon>New Post
+      </button>
+    </div>
+
+    <h1>{{message}}</h1>
   </div>
-
-  <div *ngIf="isArtist">
-    <button class="mb-2" mat-raised-button routerLink="/new_post" >
-      <mat-icon>add</mat-icon>New Post
-    </button>
-  </div>
-
-  <h1>{{message}}</h1>
-
   <div class="album py-5 bg-light">
     <div class="row">
       <div *ngFor="let post of posts">
