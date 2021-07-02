@@ -12,7 +12,7 @@ export class PostsListComponent implements OnInit {
 
   posts: any;
   categories: any;
-
+  p: number = 1;
 
   constructor(
     private postService: PostsService,

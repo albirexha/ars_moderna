@@ -44,6 +44,11 @@ import {MatSelectModule} from "@angular/material/select";
 import {NgImageSliderModule} from "ng-image-slider";
 import { NewArtistComponent } from './posts/new-artist/new-artist.component';
 import { NewPostComponent } from './posts/new-post/new-post.component';
+import { UserPostsComponent } from './users/user-posts/user-posts.component';
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import { ChangePasswordComponent } from './users/change-password/change-password.component';
+import { ViewUserComponent } from './users/view-user/view-user.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -69,6 +74,10 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
     AddCategoryComponent,
     NewArtistComponent,
     NewPostComponent,
+    UserPostsComponent,
+    UserProfileComponent,
+    ChangePasswordComponent,
+    ViewUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +107,8 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
     }),
     MatOptionModule,
     MatSelectModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    NgxPaginationModule
   ],
   providers: [
     AdminGuard,

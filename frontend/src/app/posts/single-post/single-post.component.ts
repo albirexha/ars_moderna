@@ -25,6 +25,7 @@ export class SinglePostComponent implements OnInit {
   likeCounter: any;
   postImages: any;
   sliderImages: Array<object> = [];
+  imageSize = {width: '50%', height: 300};
 
   ngOnInit(): void {
     this.route.params
@@ -86,8 +87,7 @@ export class SinglePostComponent implements OnInit {
     });
 
     images.forEach((image_ : any)=>{
-      this.sliderImages.push({image: imgLocation+image_,thumbImage: 'https://hyaencdmit-flywheel.netdna-ssl.com/wp-content/uploads/TCG084VGLAAANN-AN00-300x200-1.jpg'});
-
+      this.sliderImages.push({image: imgLocation+image_,thumbImage: imgLocation+image_});
     });
   }
 }

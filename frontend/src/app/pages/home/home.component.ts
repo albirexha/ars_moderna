@@ -64,5 +64,8 @@ export class HomeComponent implements OnInit {
     this.isArtist = data.isArtist;
   }
 
+  isLogged(){
+    return this.authService.loggedIn();
+  }
 
 }
