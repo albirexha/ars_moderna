@@ -13,6 +13,7 @@ export class PostsListComponent implements OnInit {
   posts: any;
   categories: any;
   p: number = 1;
+  imgUrl: string = "http://localhost/ars_moderna/backend/storage/app/public/imgs/";
 
   constructor(
     private postService: PostsService,
