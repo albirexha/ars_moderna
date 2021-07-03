@@ -1,9 +1,33 @@
-<form class="form-signin" [formGroup]="form" (submit)="submit()">
-  <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
-  <input formControlName="email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+<!--<form class="form-signin" [formGroup]="form" (submit)="submit()">-->
+<!--  <h1 class="h3 mb-3 font-weight-normal">Please register</h1>-->
+<!--  <input formControlName="email" type="email" class="form-control" placeholder="Email address" required="" autofocus="">-->
 
-  <input formControlName="password" type="password" class="form-control" placeholder="Password" required="">
+<!--  <input formControlName="password" type="password" class="form-control" placeholder="Password" required="">-->
 
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+<!--  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>-->
 
-</form>
+<!--</form>-->
+
+
+
+<div class="wrapper fadeInDown">
+  <img src="../../../assets/images/Logo.png" alt="" style="width:250px; height:auto">
+  <div id="formContent">
+    <br>
+    <!-- Login Form -->
+    <form class="form-signin" [formGroup]="form" (submit)="submit()">
+      <!-- <h1 class="h3 mb-3 font-weight-normal" style="color:white">Please register</h1> -->
+      <input formControlName="email" type="email" class="form-control" placeholder="Email address" id="login" class="fadeIn second" required="" autofocus="">
+
+      <input formControlName="password" type="password" class="form-control" placeholder="Password" id="password" class="fadeIn third" required="">
+
+      <input type="submit" name="submitted" class="fadeIn fourth" value="Login">
+
+      <!-- <hr style="background-color:white;"> -->
+
+      <h3 style="color:#ddd">If you don't have an account, please <a href="" style="color: #9D4C4C"><u>Register</u></a> </h3>
+
+    </form>
+  </div>
+</div>
+

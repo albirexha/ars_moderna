@@ -2,7 +2,9 @@
 @import '~ngx-toastr/toastr.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  background: linear-gradient(to right, #16151a, #16151a);
+  min-height: auto;
+  overflow-x: hidden; }
 
 .table-responsive{
   background-color: #fff!important;
