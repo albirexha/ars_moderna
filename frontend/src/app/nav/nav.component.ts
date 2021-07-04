@@ -21,16 +21,20 @@ export class NavComponent implements OnInit {
   ) { }
 
   isLogged: any;
-
-
+  userName: any;
+  first_name: any;
   ngOnInit(): void {
     Auth.authEmitter.subscribe(
       (authenticated: boolean)=>{
         this.authenticated = authenticated;
       }
-    )
+    );
 
     this.isLogged = this.authService.loggedIn();
+    this.userName = this.localStorageService.retrieve('username');
+    this.first_name = this.localStorageService.retrieve('name');
+
+    this.checkArtist();
   }
 
   logout(){
@@ -42,5 +46,12 @@ export class NavComponent implements OnInit {
         this.router.navigate(['/']);
       }
     );
+  }
+
+  isArtist: any = 1;
+
+  async checkArtist() {
+    var data: any = await this.authService.authUserArtist().toPromise();
+    this.isArtist = data.isArtist;
   }
 }

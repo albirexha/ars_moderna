@@ -18,6 +18,7 @@ import {NewArtistComponent} from "./posts/new-artist/new-artist.component";
 import {NewPostComponent} from "./posts/new-post/new-post.component";
 import {UserProfileComponent} from "./users/user-profile/user-profile.component";
 import {ViewUserComponent} from "./users/view-user/view-user.component";
+import {FavoritesListComponent} from "./favorites/favorites-list/favorites-list.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,8 +26,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'posts', component: PostsListComponent},
   {path: 'my_posts', component: MyPostsListComponent},
+  {path: 'my_favorites', component: FavoritesListComponent},
   {path: 'single-post/:id' ,component: SinglePostComponent},
-  {path: 'new_post' ,component: NewPostComponent},
   {path: 'new_artist' ,component: NewArtistComponent},
   {path: 'my_profile' ,component: UserProfileComponent},
   {path: 'user/:id' ,component: ViewUserComponent},

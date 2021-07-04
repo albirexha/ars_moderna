@@ -1,11 +1,26 @@
 <div class="row">
   <div class="col-12">
-    <h2>Add New User</h2>
+    <h2>Become an artist now!</h2>
   </div>
 </div>
 <form [formGroup]="form" (submit)="onSubmit()" enctype="multipart/form-data">
   <div class="row py-2">
     <!--    <input type="hidden" formControlName="id">-->
+    <div class="col-sm-12 col-md-12">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput #input formControlName="first_name" required>
+        <mat-error>First Name is required.</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-12 col-md-12">
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput #input formControlName="last_name" required>
+        <mat-error>Last Name is required.</mat-error>
+      </mat-form-field>
+    </div>
+
     <div class="col-sm-12 col-md-12">
       <mat-form-field>
         <mat-label>Phone</mat-label>
@@ -38,7 +53,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-12 text-right">
       <button class="mb-2" mat-raised-button>
-        <mat-icon>add</mat-icon>New Artist
+        <mat-icon>add</mat-icon>Submit
       </button>
     </div>
   </div>

@@ -85,6 +85,7 @@ class UserController extends Controller
         return response()->json([$response], 201);
     }
 
+
     public function show($id)
     {
     }
@@ -187,4 +188,7 @@ class UserController extends Controller
             return response()->json('Password failed to change!', 404);
         }
     }
+
+
+
 }

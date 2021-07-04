@@ -34,6 +34,8 @@ export class MyPostsListComponent implements OnInit {
     }, (error) =>{
         if(error.status === 401)
           this.error = "Please login!";
+        if(error.status ===404)
+          this.posts = [];
         else
           this.error = error.error;
     });
@@ -61,6 +63,5 @@ export class MyPostsListComponent implements OnInit {
         }
       });
   }
-
 
 }

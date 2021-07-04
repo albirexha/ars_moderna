@@ -1675,6 +1675,7 @@ body::-webkit-scrollbar-thumb {
 .card__likes svg {
   fill: #eb5757;
 }
+
 .card__likes--active svg {
   fill: #eb5757;
 }

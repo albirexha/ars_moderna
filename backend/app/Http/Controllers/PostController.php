@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artist;
 use App\Models\Category;
 use App\Models\Images;
 use App\Models\Like;
@@ -23,10 +24,14 @@ class PostController extends Controller
     public function index()
     {
         //
-        $allPosts = Post::withCount('likes')->orderBy('id','DESC')->get();
+
+        $allPosts = Post::with('user')->orderBy('id','DESC')->get();
+
         $posts = [];
         if($allPosts){
             foreach ($allPosts as $post){
+                $artist = Artist::where('user_id',$post->user_id)->first();
+                $post->artist = $artist;
                 $post->date = $post->created_at->diffForHumans();
                 $posts[] = $post;
             }
@@ -63,6 +68,7 @@ class PostController extends Controller
             'images' => 'required',
             'images.*' => 'image',
             'category_id' => 'required',
+            'tools' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -85,6 +91,7 @@ class PostController extends Controller
         $user = User::findOrFail($request->input('user_id'));
         $post->image = $images[0];
         $post->category_id = $request->input('category_id');
+        $post->tools = $request->input('tools');
 
         if ($user->post()->save($post)) {
             foreach ($images as $imagee){
@@ -175,8 +182,12 @@ class PostController extends Controller
     }
 
     public function view_post($id){
-        $post=Post::with(['user','images'])->find($id);
+        $post=Post::with(['user','images','category'])->find($id);
         if($post){
+            $artist = Artist::where('user_id',$post->user_id)->first();
+            $post->date = $post->created_at->diffForHumans();
+            $post->artist = $artist;
+
             $respose = [
                 'msg' => 'Post',
                 'post' => $post
@@ -196,8 +207,20 @@ class PostController extends Controller
 
     public function top_posts(){
 
-        $top_posts = Post::orderBy('total_likes','DESC')->limit(2)->get();
-        return response()->json($top_posts, 201);
+        $all_posts = Post::with('user')->orderBy('total_likes','DESC')->limit(4)->get();
+        $top_posts = [];
+
+        if($all_posts){
+            foreach ($all_posts as $post){
+         //       $user = $post->user()->id;
+                $artist = Artist::where('user_id',$post->user_id)->first();
+                $post->artist = $artist;
+                $post->date = $post->created_at->diffForHumans();
+                $top_posts[] = $post;
+            }
+            return response()->json($top_posts, 201);
+        }
+        return response()->json("No posts!", 401);
     }
 
     public function check_like($id){
@@ -218,11 +241,43 @@ class PostController extends Controller
     }
 
     public function getPostsByCategory($id){
-        $posts = Category::findOrFail($id)->posts()->get();
-        $respose = [
-            'msg' => 'Posts',
-            'posts' => $posts
-        ];
-        return response()->json($respose, 201);
+        $all_posts = Post::with('user')->where('category_id',$id)->orderBy('id','DESC')->get();
+        $top_posts = [];
+
+        if($all_posts){
+            foreach ($all_posts as $post){
+                //       $user = $post->user()->id;
+                $artist = Artist::where('user_id',$post->user_id)->first();
+                $post->artist = $artist;
+                $post->date = $post->created_at->diffForHumans();
+                $top_posts[] = $post;
+            }
+            return response()->json($top_posts, 201);
+        }
+        return response()->json("No posts!", 401);
+
+    }
+
+    public function similarPosts($id){
+
+        $all_posts = Post::with('user')->where('category_id',$id)->orderBy('total_likes','DESC')->limit(4)->get();
+        $top_posts = [];
+
+        if($all_posts){
+            foreach ($all_posts as $post){
+                //       $user = $post->user()->id;
+                $artist = Artist::where('user_id',$post->user_id)->first();
+                $post->artist = $artist;
+                $post->date = $post->created_at->diffForHumans();
+                $top_posts[] = $post;
+            }
+            return response()->json($top_posts, 201);
+        }
+        return response()->json("No posts!", 401);
+    }
+
+    public function latestUserPosts($id){
+        $posts = Post::where('user_id',$id)->orderBy('id','DESC')->limit(4)->get();
+        return response()->json($posts, 201);
     }
 }

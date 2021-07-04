@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
         this.authService.authUser().subscribe((next: any) => {
           this.localStorageService.store('role',next.role);
           this.localStorageService.store('isArtist',next.isArtist);
+          this.localStorageService.store('name',next.artist.first_name);
+          this.localStorageService.store('username',next.name);
           if (next.role == 1) {
             this.router.navigate(['dashboard'])
           } else {

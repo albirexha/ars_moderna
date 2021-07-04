@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -23,6 +24,8 @@ class ArtistController extends Controller
     public function new_artist(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'last_name' => 'required',
             'phone' => 'required',
             'address' => 'required',
             'country' => 'required',
@@ -36,6 +39,8 @@ class ArtistController extends Controller
         $user = Auth::user();
         $artist = new Artist();
 
+        $artist->first_name = $request->input('first_name');
+        $artist->last_name = $request->input('last_name');
         $artist->phone = $request->input('phone');
         $artist->address = $request->input('address');
         $artist->country = $request->input('country');
@@ -63,9 +68,36 @@ class ArtistController extends Controller
         return response()->json('Artist exists!', 406);
     }
 
+    public function artist_by_id($id){
+        $artist = Artist::with('user')->where('user_id',$id)->first();
+        if($artist){
+            $totalPosts = Post::where('user_id',$id)->get();
+            $postsCount = Post::where('user_id',$id)->count();
+            $totalLikes = 0;
+            if($totalPosts) {
+                foreach ($totalPosts as $post) {
+                    $totalLikes += $post->total_likes;
+                }
+            }
+
+            $artist->totalPosts = $postsCount;
+            $artist->totalLikes = $totalLikes;
+
+            return response()->json($artist, 201);
+
+        }else{
+            return response()->json('Artist not found!',404);
+        }
+    }
+
     public function store(Request $request)
     {
 
+    }
+
+    public function latest_artists(){
+        $artists = Artist::with('user')->orderBy('created_at','DESC')->limit(4)->get();
+        return response()->json($artists, 201);
     }
 
     public function edit($id)

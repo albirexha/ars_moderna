@@ -7,3 +7,11 @@
 .cdk-overlay-container {
   backdrop-filter: blur(4px);
 }
+
+h2{
+  color:#007bff;
+}
+mat-form-field{
+  width: 100%;
+  margin-top: 10px;
+}
