@@ -22,6 +22,7 @@ Route::get('hello',fn()=>'hello, world');
 
 Route::get('/loginform', [\App\Http\Controllers\UserController::class, 'login'])->name('loginform');
 Route::post('register', [AuthController::class, 'register']);
+Route::post('register_user', [AuthController::class, 'register_user']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -75,15 +76,23 @@ Route::get('post/{id}', [\App\Http\Controllers\PostController::class,'view_post'
 Route::get('isAdmin',[AuthController::class,'isAdmin'])->middleware('auth:sanctum');
 
 Route::get('cat_posts/{id}',[\App\Http\Controllers\PostController::class,'getPostsByCategory']);
+Route::get('similar_posts/{id}',[\App\Http\Controllers\PostController::class,'similarPosts']);
 
 //Route::resource('likes',\App\Http\Controllers\LikeController::class)->middleware('auth:sanctum');
 
 Route::get('new_like/{id}',[\App\Http\Controllers\LikeController::class,'new_like'])->middleware('auth:sanctum');
+Route::get('new_favorite/{id}',[\App\Http\Controllers\FavoriteController::class,'new_favorite'])->middleware('auth:sanctum');
 Route::get('likes_no/{id}',[\App\Http\Controllers\PostController::class,'likes_number']);
 
 Route::get('check_like/{id}',['App\Http\Controllers\PostController','check_like'])->middleware('auth:sanctum');
+Route::get('check_favorite/{id}',['App\Http\Controllers\FavoriteController','check_favorite'])->middleware('auth:sanctum');
+Route::get('my_favorites', [\App\Http\Controllers\FavoriteController::class,'my_favorites'])->middleware('auth:sanctum');
 
 Route::get('top_posts',[\App\Http\Controllers\PostController::class,'top_posts']);
+Route::get('latest_artists',[\App\Http\Controllers\ArtistController::class,'latest_artists']);
+Route::get('artist_by_id/{id}',[\App\Http\Controllers\ArtistController::class,'artist_by_id']);
+
+Route::get('latest_user_posts/{id}',[\App\Http\Controllers\PostController::class,'latestUserPosts']);
 
 //Route::group(['middleware' => ['admin']], function () {
 //    Route::get(,[\App\Http\Controllers\UserController::class,'user_posts']);

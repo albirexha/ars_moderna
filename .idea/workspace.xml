@@ -2,31 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8846cc58-eb50-419e-841a-9a4fee4320cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/cover1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/home.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/postBg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/slide1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/slide2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/slide3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/add-favorite/add-favorite.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/add-favorite/add-favorite.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/add-favorite/add-favorite.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/add-favorite/add-favorite.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/favorites-list/favorites-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/favorites-list/favorites-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/favorites-list/favorites-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/favorites/favorites-list/favorites-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/favorite.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/new_artist.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/ArtistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/ArtistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/FavoriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/FavoriteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Artist.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Artist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2021_05_21_135026_create_artists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2021_05_21_135026_create_artists_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2021_05_24_124538_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2021_05_24_124538_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/nav/nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/not-found/not-found.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/not-found/not-found.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/not-found/not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/not-found/not-found.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/home/home.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/my-posts/my-posts-list/my-posts-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-artist/new-artist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/new-post/new-post.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/posts-list/posts-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/posts/single-post/single-post.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/posts.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/users.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/users/view-user/view-user.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +233,7 @@
       <workItem from="1621709832673" duration="1879000" />
       <workItem from="1621845241635" duration="46718000" />
       <workItem from="1622719173287" duration="182427000" />
-      <workItem from="1624864444775" duration="67057000" />
+      <workItem from="1624864444775" duration="113783000" />
     </task>
     <servers />
   </component>
@@ -223,34 +253,34 @@
     </state>
     <state x="-1098" y="-152" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860/-1680.-152.1680.1010@-1680.-152.1680.1010" timestamp="1625068147564" />
     <state x="554" y="11" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1621860549192" />
-    <state x="-1123" y="65" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625062067092">
-      <screen x="-1680" y="-152" width="1680" height="1010" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625424984538">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="-1123" y="65" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/-1680.-152.1680.1010@-1680.-152.1680.1010" timestamp="1625062067092" />
     <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/1600.-150.1680.1010@0.0.1600.860" timestamp="1621605721632" />
     <state x="2157" y="217" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860/1600.0.1680.1010@1600.0.1680.1010" timestamp="1623158511765" />
-    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1624544684874" />
+    <state x="530" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1625424984538" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1622469348353">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860/1600.-150.1680.1010@0.0.1600.860" timestamp="1621592572242" />
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1622469348353" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1621792024358">
+    <state width="1545" height="208" key="GridCell.Tab.0.bottom" timestamp="1625368056103">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1621792024358" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1621792024357">
+    <state width="1545" height="208" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1625368056103" />
+    <state width="1545" height="208" key="GridCell.Tab.0.center" timestamp="1625368056103">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1621792024357" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1621792024356">
+    <state width="1545" height="208" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1625368056103" />
+    <state width="1545" height="208" key="GridCell.Tab.0.left" timestamp="1625368056102">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1621792024356" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1621792024357">
+    <state width="1545" height="208" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1625368056102" />
+    <state width="1545" height="208" key="GridCell.Tab.0.right" timestamp="1625368056103">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1621792024357" />
+    <state width="1545" height="208" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1625368056103" />
     <state x="143" y="0" key="SettingsEditor" timestamp="1621932660805">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

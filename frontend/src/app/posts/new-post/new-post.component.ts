@@ -6,6 +6,7 @@ import {ToastrService} from "ngx-toastr";
 import {CategoriesService} from "../../services/categories.service";
 import {UsersService} from "../../services/users.service";
 import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-post',
@@ -21,6 +22,9 @@ export class NewPostComponent implements OnInit {
     private categoryService: CategoriesService,
     private userService: UsersService,
     private authService: AuthService,
+    private router: Router,
+    public dialogRef: MatDialogRef<NewPostComponent>,
+
   ) { }
 
   ngOnInit(): void {
@@ -56,10 +60,13 @@ export class NewPostComponent implements OnInit {
 
     formData.append('title', f.title);
     formData.append('user_id', this.user_id);
+    formData.append('tools', f.tools);
     formData.append('category_id',f.category_id);
 
     this.postService.createPost(formData).subscribe(data=>{
       this.toastr.success('Post created!');
+      this.dialogRef.close();
+      this.router.navigate(['my_posts']);
     },error => {
       console.log(error);
       if(error.status == 401)

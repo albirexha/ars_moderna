@@ -19,8 +19,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      full_name: '',
-      role: '',
+      name: '',
       email: '',
       password: '',
       //password_confirm: '',
@@ -28,7 +27,7 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(): void{
-    this.http.post('http://localhost/ars_moderna/backend/public/api/register', this.form?.getRawValue())
+    this.http.post('http://localhost/ars_moderna/backend/public/api/register_user', this.form?.getRawValue())
       .subscribe(()=>this.router.navigate(['/login']))
   }
 

@@ -1672,9 +1672,10 @@ body::-webkit-scrollbar-thumb {
 .card__likes span:empty {
   margin-left: 0;
 }
-.card__likes:hover svg {
+.card__likes svg {
   fill: #eb5757;
 }
+
 .card__likes--active svg {
   fill: #eb5757;
 }
@@ -5012,4 +5013,9 @@ body::-webkit-scrollbar-thumb {
   background: #9D4C4C !important;
   height: 4px !important;
   border-radius: 4px !important;
+}
+
+.ngx-pagination{
+  margin: 10px 0px !important;
+  display: flex !important;
 }

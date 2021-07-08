@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\Artist;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -66,7 +68,13 @@ class AuthController extends Controller
 
     public function authUser(Request $request)
     {
-        return $request->user();
+        $user = $request->user();
+        if($user) {
+            $artist = Artist::where('user_id', $user->id)->first();
+            $user->artist = $artist;
+        }
+
+        return $user;
     }
 
     public function isAdmin(Request $request){
@@ -87,6 +95,38 @@ class AuthController extends Controller
         return \response([
             'message' => 'success'
         ])->withCookie($cookie);
+    }
+
+    public function register_user(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 401);
+        }
+
+        $user = new User();
+
+        $user->role = 0;
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+
+        if ($user->save()) {
+            $user->view_user = [
+                'href' => 'api/user/' . $user->id,
+                'method' => 'GET'
+            ];
+            $respose = [
+                'msg' => 'User created',
+                'user' => $user
+            ];
+            return response()->json([$respose], 201);
+        }
+        return response()->json('User is not created', 404);
     }
 
 }

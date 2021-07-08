@@ -22,6 +22,8 @@ export class NewArtistComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
     // id: new FormControl),
+    first_name: new FormControl('', Validators.required),
+    last_name: new FormControl('', Validators.required),
     phone: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
     country: new FormControl('', Validators.required),

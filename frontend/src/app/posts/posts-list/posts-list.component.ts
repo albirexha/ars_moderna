@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {PostsService} from "../../services/posts.service";
 import {Router} from "@angular/router";
 import {CategoriesService} from "../../services/categories.service";
+import {AuthService} from "../../services/auth.service";
+import {LikesService} from "../../services/likes.service";
 
 @Component({
   selector: 'app-posts-list',
@@ -18,7 +20,9 @@ export class PostsListComponent implements OnInit {
   constructor(
     private postService: PostsService,
     private _router: Router,
-    private categoryService: CategoriesService
+    private categoryService: CategoriesService,
+    private authService: AuthService,
+    private likeService: LikesService,
 
   ){}
 
@@ -42,7 +46,12 @@ export class PostsListComponent implements OnInit {
 
   getPostsByCat(id:any){
     this.postService.posts_cat(id).toPromise().then((data: any)=>{
-      this.posts = data.posts;
+      this.posts = data;
     })
   }
+
+  resetCatFilter(){
+    this.getPosts();
+  }
+
 }

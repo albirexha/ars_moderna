@@ -1,77 +1,3 @@
-<!--<app-nav></app-nav>-->
-
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col-md-4">-->
-<!--      <mat-form-field>-->
-<!--        <mat-label>Category</mat-label>-->
-<!--        <mat-select ngModel name="category_id" aria-required="mat-option" required >-->
-<!--          <mat-option *ngFor="let category of categories" [value]="category.id" (click)="getPostsByCat(category.id)">-->
-<!--            {{ category.category_name }}-->
-<!--          </mat-option>-->
-<!--        </mat-select>-->
-<!--      </mat-form-field>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="album py-5 bg-light">-->
-<!--    <div class="row">-->
-
-<!--      <div *ngFor="let post of posts | paginate: {itemsPerPage:9, currentPage:p} ">-->
-<!--        <div class="col-md-4">-->
-<!--          <div class="card mb-4 box-shadow">-->
-<!--            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17a0a97f865%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17a0a97f865%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">-->
-<!--            <div class="card-body">-->
-<!--              <h5 class="card-title">{{post.title}}</h5>-->
-<!--              <p class="card-text">{{post.description}}sss</p>-->
-<!--              <div class="d-flex justify-content-between align-items-center">-->
-<!--                <div class="btn-group">-->
-<!--                  <button [routerLink]="['../single-post',post.id]" type="button" class="btn btn-sm btn-outline-secondary">View</button>-->
-<!--                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
-<!--                </div>-->
-<!--                <small class="text-muted">{{post.date}}</small>-->
-<!--                <small class="text-muted">Likes: {{post.total_likes}}</small>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
-
-<!--    </div>-->
-<!--  </div>-->
-
-<!--</div>-->
-
-
-<!--&lt;!&ndash;<ul>&ndash;&gt;-->
-<!--&lt;!&ndash;  <li *ngFor="let post of posts; let i = index">&ndash;&gt;-->
-<!--&lt;!&ndash;    <a [routerLink]="['../single-post',post.id]" > {{post.title}}</a>&ndash;&gt;-->
-<!--&lt;!&ndash;  </li>&ndash;&gt;-->
-<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-
-<!--&lt;!&ndash;<div class="mat-elevation-z8">&ndash;&gt;-->
-
-<!--&lt;!&ndash;<table mat-table [dataSource]="posts">&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <ng-container matColumnDef="title">&ndash;&gt;-->
-<!--&lt;!&ndash;      <th mat-header-cell *matHeaderCellDef> Title </th>&ndash;&gt;-->
-<!--&lt;!&ndash;      <td mat-cell *matCellDef="let post"> {{post.title}} </td>&ndash;&gt;-->
-<!--&lt;!&ndash;    </ng-container>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>&ndash;&gt;-->
-<!--&lt;!&ndash;    <tr mat-row *matRowDef="let post; columns: columnsToDisplay"></tr>&ndash;&gt;-->
-<!--&lt;!&ndash;</table>&ndash;&gt;-->
-
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-<!--<div class="row">-->
-<!--  <p *ngIf="error">{{error}}</p>-->
-<!--<ul *ngIf="posts">-->
-<!--  <li *ngFor="let post of posts; let i = index">-->
-<!--    {{ i }} {{ post.title }}-->
-<!--  </li>-->
-<!--</ul>-->
-<!--</div>-->
 <app-nav></app-nav>
 <div class="container">
   <!-- explore -->
@@ -79,11 +5,14 @@
     <!-- title -->
     <div class="col-12">
       <div class="main__title">
-        <h2>Popular</h2>
-        <div class="col-md-4">-->
-                <mat-form-field>
-                  <mat-label>Category</mat-label>
-                  <mat-select ngModel name="category_id" aria-required="mat-option" required >
+        <h2>All posts</h2>
+        <div class="col-md-2">
+                <mat-form-field style="padding-top: 40px;">
+                  <mat-label style="color: white">Category</mat-label>
+                  <mat-select style="color: white" ngModel name="category_id" aria-required="mat-option" >
+                    <mat-option (click)="resetCatFilter()" selected>
+                      All Posts
+                    </mat-option>
                     <mat-option *ngFor="let category of categories" [value]="category.id" (click)="getPostsByCat(category.id)">
                       {{ category.category_name }}
                     </mat-option>
@@ -99,33 +28,39 @@
       <div class="tab-content" >
         <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
           <div class="row row--grid">
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts | paginate: {itemsPerPage:9, currentPage:p}">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts">
+<!--            <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts | paginate: {itemsPerPage:12, currentPage:p}">-->
               <!-- card -->
               <div class="card">
                 <div *ngIf="post.image">
-                  <a href="item.php" class="card__cover">
+                  <a [routerLink]="['../single-post',post.id]" class="card__cover">
                     <img src="{{imgUrl+post.image}}" alt="">
                   </a>
                 </div>
                 <div *ngIf="!post.image">
-                  <a href="item.php" class="card__cover">
+                  <a [routerLink]="['../single-post',post.id]" class="card__cover">
                     <img src="../assets/images/cover1.jpg" alt="">
                   </a>
                 </div>
-                <h3 class="card__title"><a href="item.php">Walking on Air</a></h3>
+                <h3 class="card__title"><a [routerLink]="['../single-post',post.id]">{{post.title}}</a></h3>
                 <div class="card__author">
                   <img src="../assets/images/avatar.jpg" alt="">
-                  <a href="author.php">@nickname</a>
+                  <a [routerLink]="['../user',post.user.id]">{{post.artist.first_name + " " + post.artist.last_name}}</a>
                 </div>
                 <div class="card__info">
-                  <button class="card__likes" type="button">
+                  <li class="card__likes">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"/></svg>
-                    <span>189</span>
-                  </button>
+                    <span *ngIf="post.total_likes==1"> {{post.total_likes}} Like </span>
+                    <span *ngIf="post.total_likes!=1"> {{post.total_likes}} Likes </span>
+
+                  </li>
+                  <small class="text-muted">{{post.date}}</small>
                 </div>
+                <!-- end card -->
               </div>
-              <!-- end card -->
             </div>
+<!--            <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+
             <!-- end paginator -->
           </div>
         </div>
@@ -135,7 +70,6 @@
     <!-- end explore -->
 
     <!-- end new authors -->
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
   </div>
 

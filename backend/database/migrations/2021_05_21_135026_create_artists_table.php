@@ -18,6 +18,8 @@ class CreateArtistsTable extends Migration
             //$table->index('user_id');
             $table->integer('user_id')->unsigned()->unique();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('first_name')->index();
+            $table->string('last_name')->index();
             $table->string('phone')->index();
             $table->string('address')->index()->nullable();
             $table->string('country')->index()->nullable();

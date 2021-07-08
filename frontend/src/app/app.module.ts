@@ -49,6 +49,8 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { ChangePasswordComponent } from './users/change-password/change-password.component';
 import { ViewUserComponent } from './users/view-user/view-user.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { AddFavoriteComponent } from './favorites/add-favorite/add-favorite.component';
+import { FavoritesListComponent } from './favorites/favorites-list/favorites-list.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +80,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     UserProfileComponent,
     ChangePasswordComponent,
     ViewUserComponent,
+    AddFavoriteComponent,
+    FavoritesListComponent,
   ],
   imports: [
     BrowserModule,

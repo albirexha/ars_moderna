@@ -39,6 +39,14 @@ export class UsersService {
     return this.http.put(this.RootURL + "/edit_profile/"+ values.id, values);
   }
 
+  getLatestArtists(){
+    return this.http.get(this.RootURL + '/latest_artists');
+  }
+
+  getArtistById(id: string){
+    return this.http.get(this.RootURL + '/artist_by_id/' + id);
+  }
+
   editForm: FormGroup = new FormGroup({
     id: new FormControl(null),
     name: new FormControl('', Validators.required),

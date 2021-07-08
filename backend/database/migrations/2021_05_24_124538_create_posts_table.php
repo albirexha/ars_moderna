@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             //$table->index('user_id');
             $table->integer('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->integer('total_likes')->unsigned();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title')->index();

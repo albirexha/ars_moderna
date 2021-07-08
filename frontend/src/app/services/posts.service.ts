@@ -35,11 +35,19 @@ export class PostsService {
     });
   }
 
-  likes_no(id: String){
-    return this.http.get(this.RootURL+'/likes_no/'+id);
+  getTopPosts(){
+    return this.http.get(this.RootURL+'/top_posts');
   }
 
   posts_cat(id: String){
     return this.http.get(this.RootURL+'/cat_posts/'+id);
+  }
+
+  getSimilarPosts(id: String){
+    return this.http.get(this.RootURL+'/similar_posts/'+id);
+  }
+
+  getLatestUserPosts(id: String){
+    return this.http.get(this.RootURL+'/latest_user_posts/'+id);
   }
 }

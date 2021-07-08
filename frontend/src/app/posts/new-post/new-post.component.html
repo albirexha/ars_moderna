@@ -20,15 +20,23 @@
       </mat-form-field>
     </div>
 
+
     <div class="col-sm-12 col-md-6 mt-2">
       <mat-form-field>
-      <mat-label>Category</mat-label>
-      <mat-select ngModel name="category_id" aria-required="mat-option" required>
-        <mat-option *ngFor="let category of categories" [value]="category.id">
-          {{ category.category_name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+        <mat-label>Tools</mat-label>
+        <input matInput #input ngModel name="tools" required>
+      </mat-form-field>
+    </div>
+
+    <div class="col-sm-12 col-md-6 mt-2">
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select ngModel name="category_id" aria-required="mat-option" required>
+          <mat-option *ngFor="let category of categories" [value]="category.id">
+            {{ category.category_name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <div class="row">

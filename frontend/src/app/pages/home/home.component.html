@@ -56,8 +56,16 @@
               <h1 class="hero__title">Discover the world top designers & creatives</h1>
               <p class="hero__text">Sign Up to be one of the designers to post!</p>
               <div class="hero__btns">
-                <a href="#" class="hero__btn hero__btn--clr" style="text-decoration: none;">Sign Up</a>
-              </div>
+                <div *ngIf="!isLogged()">
+                  <a routerLink="/register" class="hero__btn hero__btn--clr" style="text-decoration: none;">Sign Up</a>
+                </div>
+                <div *ngIf="isLogged()">
+                  <div *ngIf="!isArtist">
+                      <a (click)="new_artist()" class="hero__btn hero__btn--clr" style="text-decoration: none;">Become an Artist!</a>
+                  </div>
+                  <div *ngIf="isArtist">
+                    <a (click)="new_post()" class="hero__btn hero__btn--clr" style="text-decoration: none;">New Post</a>
+                  </div>
             </div>
           </div>
         </div>
@@ -81,24 +89,32 @@
           <div class="tab-content">
             <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
               <div class="row row--grid">
-                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of top_posts">
                   <!-- card -->
                   <div class="card">
-                    <a href="item.php" class="card__cover">
-                      <img src="../assets/images/cover1.jpg" alt="">
-                    </a>
-                    <h3 class="card__title"><a href="item.php">Walking on Air</a></h3>
+                    <div *ngIf="post.image">
+                      <a [routerLink]="['../single-post',post.id]" class="card__cover">
+                        <img src="{{imgUrl+post.image}}" alt="">
+                      </a>
+                    </div>
+                    <div *ngIf="!post.image">
+                      <a [routerLink]="['../single-post',post.id]" class="card__cover">
+                        <img src="../assets/images/cover1.jpg" alt="">
+                      </a>
+                    </div>
+                    <h3 class="card__title"><a [routerLink]="['../single-post',post.id]">{{post.title}}</a></h3>
                     <div class="card__author">
                       <img src="../assets/images/avatar.jpg" alt="">
-                      <a href="author.php">@nickname</a>
+                      <a [routerLink]="['../user',post.user.id]">{{post.artist.first_name}}</a>
                     </div>
                     <div class="card__info">
-                      <button class="card__likes" type="button">
+                      <li class="card__likes">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"/></svg>
-                        <span>189</span>
-                      </button>
+                        <span *ngIf="post.total_likes==1"> {{post.total_likes}} Like </span>
+                        <span *ngIf="post.total_likes!=1"> {{post.total_likes}} Likes </span>
+                      </li>
+                      <small class="text-muted">{{post.date}}</small>
                     </div>
-                  </div>
                   <!-- end card -->
                 </div>
 
@@ -114,107 +130,28 @@
           <!-- title -->
           <div class="col-12">
             <div class="main__title">
-              <h2><a href="authors.php">New Artists</a></h2>
+              <h2><a>Latest Artists</a></h2>
             </div>
           </div>
           <!-- end title -->
 
           <!-- carousel -->
           <div class="row">
-            <div class="col-3">
+            <div class="col-3" *ngFor="let artist of latest_artists">
               <div class="main__carousel-wrap">
                 <div class="main__carousel main__carousel--authors owl-carousel" id="authorsc">
-                  <div class="author">
-                    <a href="author.php" class="author__cover author__cover--bg" data-bg="../assets/images/home.jpg">
+                  <div class="author" >
+                    <a [routerLink]="['../user',artist.user.id]" class="author__cover author__cover--bg" data-bg="../assets/images/home.jpg">
                     </a>
                     <div class="author__meta">
-                      <a href="author.php" class="author__avatar author__avatar--verified">
+                      <a [routerLink]="['../user',artist.user.id]" class="author__avatar author__avatar--verified">
                         <img src="../assets/images/avatar.jpg" alt="">
                       </a>
-                      <h3 class="author__name"><a href="author.php">Adam Zapel</a></h3>
-                      <h3 class="author__nickname"><a href="author.php">@aaarthur</a></h3>
-                      <p class="author__text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+                      <h3 class="author__name"><a [routerLink]="['../user',artist.user.id]" >{{ artist.first_name + " " + artist.last_name  }}</a></h3>
+                      <h3 class="author__nickname"><a [routerLink]="['../user',artist.user.id]" >@{{ artist.user.name }}</a></h3>
+                      <p class="author__text">Welcome to ARS MODERNA  {{artist.first_name + " " + artist.last_name }}. Have a good time here!</p>
                       <div class="author__wrap">
-                        <div class="author__followers">
-                          <p>3829</p>
-                          <span>Followers</span>
-                        </div>
-                        <button class="author__follow" type="button">Follow</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="main__carousel-wrap">
-                <div class="main__carousel main__carousel--authors owl-carousel" id="authorsc">
-                  <div class="author">
-                    <a href="author.php" class="author__cover author__cover--bg" data-bg="../assets/images/home.jpg">
-                    </a>
-                    <div class="author__meta">
-                      <a href="author.php" class="author__avatar author__avatar--verified">
-                        <img src="../assets/images/avatar.jpg" alt="">
-                      </a>
-                      <h3 class="author__name"><a href="author.php">Adam Zapel</a></h3>
-                      <h3 class="author__nickname"><a href="author.php">@aaarthur</a></h3>
-                      <p class="author__text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
-                      <div class="author__wrap">
-                        <div class="author__followers">
-                          <p>3829</p>
-                          <span>Followers</span>
-                        </div>
-                        <button class="author__follow" type="button">Follow</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="main__carousel-wrap">
-                <div class="main__carousel main__carousel--authors owl-carousel" id="authorsc">
-                  <div class="author">
-                    <a href="author.php" class="author__cover author__cover--bg" data-bg="../assets/images/home.jpg">
-                    </a>
-                    <div class="author__meta">
-                      <a href="author.php" class="author__avatar author__avatar--verified">
-                        <img src="../assets/images/avatar.jpg" alt="">
-                      </a>
-                      <h3 class="author__name"><a href="author.php">Adam Zapel</a></h3>
-                      <h3 class="author__nickname"><a href="author.php">@aaarthur</a></h3>
-                      <p class="author__text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
-                      <div class="author__wrap">
-                        <div class="author__followers">
-                          <p>3829</p>
-                          <span>Followers</span>
-                        </div>
-                        <button class="author__follow" type="button">Follow</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="main__carousel-wrap">
-                <div class="main__carousel main__carousel--authors owl-carousel" id="authorsc">
-                  <div class="author">
-                    <a href="author.php" class="author__cover author__cover--bg" data-bg="../assets/images/home.jpg">
-                    </a>
-                    <div class="author__meta">
-                      <a href="author.php" class="author__avatar author__avatar--verified">
-                        <img src="../assets/images/avatar.jpg" alt="">
-                      </a>
-                      <h3 class="author__name"><a href="author.php">Adam Zapel</a></h3>
-                      <h3 class="author__nickname"><a href="author.php">@aaarthur</a></h3>
-                      <p class="author__text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
-                      <div class="author__wrap">
-                        <div class="author__followers">
-                          <p>3829</p>
-                          <span>Followers</span>
-                        </div>
-                        <button class="author__follow" type="button">Follow</button>
+                        <button [routerLink]="['../user',artist.user.id]" class="author__follow" type="button">Visit</button>
                       </div>
                     </div>
                   </div>
